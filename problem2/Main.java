@@ -12,7 +12,6 @@ public class Main {
 
         int sum = 0;
         for (Long aList : list) sum += aList;
-        System.out.println(list);
         System.out.println(sum);
     }
 
