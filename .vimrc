@@ -59,10 +59,16 @@ NeoBundle 'ujihisa/unite-haskellimport'
 NeoBundleLazy 'Valloric/YouCompleteMe'
 NeoBundle 'vim-ruby/vim-ruby'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
-NeoBundle 'vim-jp/cpp-vim'
+NeoBundleLazy 'vim-jp/cpp-vim', {
+            \ 'autoload' : {'filetypes' : 'cpp'}
+            \ }
 
 call neobundle#end()
 NeoBundleCheck
+
+let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_cpp_compiler = 'gcc'
+let g:syntastic_cpp_compiler_options = '-std=c++14'
 
 let $PATH = $PATH . ':' . expand('~/.cabal/bin/')
 let g:indent_guides_enable_on_vim_startup = 1
