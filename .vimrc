@@ -130,6 +130,7 @@ set ignorecase          " Do case insensitive matching
 set smartcase           " Do smart case matching
 set incsearch           " Incremental search
 set autowrite
+set autoindent
 set mouse=a             " Enable mouse usage (all modes)
 set t_Co=256
 set clipboard=unnamed,autoselect
