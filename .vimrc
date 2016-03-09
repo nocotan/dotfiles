@@ -66,11 +66,12 @@ NeoBundleLazy 'vim-jp/cpp-vim', {
 call neobundle#end()
 NeoBundleCheck
 
+" C++
 let g:syntastic_cpp_checkers = ['gcc']
 let g:syntastic_cpp_compiler = 'gcc'
 let g:syntastic_cpp_compiler_options = '-std=c++14'
 
-
+" Haskell
 let $PATH = $PATH . ':' . expand('~/.cabal/bin/')
 let g:indent_guides_enable_on_vim_startup = 1
 let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
