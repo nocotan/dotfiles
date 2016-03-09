@@ -26,6 +26,8 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'nanotech/jellybeans.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundle 'osyo-manga/vim-watchdogs'
+NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'racer-rust/vim-racer'
 NeoBundle 'Shougo/unite.vim'
 NeoBundle 'Shougo/vimfiler'
 NeoBundle 'Shougo/vimproc.vim'
@@ -66,6 +68,8 @@ NeoBundleLazy 'vim-jp/cpp-vim', {
 call neobundle#end()
 NeoBundleCheck
 
+
+
 " C++
 let g:syntastic_cpp_checkers = ['gcc']
 let g:syntastic_cpp_compiler = 'gcc'
@@ -76,6 +80,10 @@ let $PATH = $PATH . ':' . expand('~/.cabal/bin/')
 let g:indent_guides_enable_on_vim_startup = 1
 let g:quickrun_config = {'*': {'hook/time/enable': '1'},}
 
+" Rust
+set hidden
+let g:racer_cmd = '$HOME/.cargo/bin/racer'
+let $RUST_SRC_PATH = "/usr/local/src/rustc-1.5.0/src"
 
 let g:neocomplcache#sources#rsense#home_directory = '/opt/rsense-0.3'
 let g:neocomplcache_enable_at_startup = 1
