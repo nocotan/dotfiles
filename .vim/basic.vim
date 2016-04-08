@@ -20,25 +20,29 @@ augroup vimrc
   autocmd!
 augroup END
 
-set number
-set ruler
-set notitle
-set visualbell t_vb=
-set wrap
+set backspace=indent,eol,start
 set cmdheight=2
-set smarttab
-set showcmd
-set nowritebackup
+set foldlevel=99
+set helplang=ja,en
+set hidden
+set matchpairs& matchpairs+=<:>
 set nobackup
+set noerrorbells
 set noswapfile
 set notimeout
+set notitle
+set nowritebackup
+set number
+set ruler
+set scrolloff=3
+set showcmd
+set smarttab
+set textwidth=0
 set ttimeout
 set timeoutlen=100
-set helplang=ja,en
-set foldlevel=99
-set backspace=indent,eol,start
+set visualbell t_vb=
 set virtualedit=all
-set matchpairs& matchpairs+=<:>
+set wrap
 
 
 "----------------------------
