@@ -31,7 +31,6 @@ set expandtab
 set tabstop=2
 set softtabstop=0
 set shiftwidth=2
-set hlsearch
 set showmatch
 set cindent
 set smartindent
@@ -40,7 +39,6 @@ set whichwrap=b,s,h,l,<,>,[,]
 set showcmd
 set ignorecase
 set smartcase
-set noincsearch
 set nowritebackup
 set nobackup
 set noswapfile
@@ -108,7 +106,8 @@ set autoindent
 " Search
 "----------------------------
 
-
+set incsearch
+set hlsearch
 
 
 
