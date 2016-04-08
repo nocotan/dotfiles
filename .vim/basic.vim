@@ -26,7 +26,6 @@ set notitle
 set visualbell t_vb=
 set wrap
 set cmdheight=2
-set cindent
 set smarttab
 set showcmd
 set nowritebackup
@@ -38,10 +37,8 @@ set timeoutlen=100
 set helplang=ja,en
 set foldlevel=99
 set backspace=indent,eol,start
-set clipboard=unnamed,autoselect
 set virtualedit=all
 set matchpairs& matchpairs+=<:>
-set clipboard+=autoselect
 
 
 "----------------------------
@@ -80,7 +77,7 @@ highlight SpellBad cterm=underline ctermbg=0
 filetype plugin indent on
 set autoindent
 set smartindent
-
+set cindent
 
 
 
@@ -145,6 +142,13 @@ if has('syntax')
 endif
 
 
+
+"----------------------------
+" Clipboard
+"----------------------------
+
+set clipboard=unnamed,autoselect
+set clipboard+=autoselect
 
 
 
