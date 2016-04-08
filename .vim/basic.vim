@@ -49,6 +49,10 @@ set nowritebackup
 set nobackup
 set noswapfile
 set notimeout
+set ttimeout
+set timeoutlen=100
+set helplang=ja,en
+set foldlevel=99
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
 set list
