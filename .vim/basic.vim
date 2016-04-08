@@ -35,7 +35,6 @@ set showmatch
 set cindent
 set smartindent
 set smarttab
-set whichwrap=b,s,h,l,<,>,[,]
 set showcmd
 set nowritebackup
 set nobackup
@@ -115,7 +114,7 @@ set wrapscan
 
 set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
-
+set whichwrap=b,s,h,l,<,>,[,]
 
 
 function! ZenkakuSpace()
