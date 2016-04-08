@@ -1,3 +1,18 @@
+"----------------------------
+" encoding
+" ---------------------------
+set encoding=utf-8
+scriptencoding utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,cp932,sjis,euc-jp,iso-2022-jp
+
+" 改行コード
+set fileformat=unix
+set fileformats=unix,dos,mac
+
+
+
+
 colorscheme molokai
 syntax on
 filetype plugin indent on
@@ -18,7 +33,6 @@ endif
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
-set encoding=utf-8
 set title
 set ruler
 set number
