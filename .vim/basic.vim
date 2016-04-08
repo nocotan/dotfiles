@@ -166,13 +166,16 @@ vmap <C-c> :w !xsel -ib<CR><CR>
 " Plugins
 "----------------------------
 
-" #NERDTree
+"# NERDTree
 let g:NERDTreeShowBookmarks=1
 if !argc()
   autocmd vimenter * NERDTree|normal gg3j
 endif
 
-" #lightline
+"# neocomplete
+let g:acp_enableAtStartup=0
+
+"# lightline
 let g:lightline = {
        \ 'active': {
        \   'right': [ [ 'syntastic', 'lineinfo' ],
