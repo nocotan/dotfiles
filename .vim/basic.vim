@@ -25,7 +25,6 @@ set ruler
 set notitle
 set visualbell t_vb=
 set wrap
-set wildmenu
 set cmdheight=2
 set cindent
 set smarttab
@@ -99,6 +98,18 @@ set hlsearch
 set ignorecase
 set smartcase
 set wrapscan
+
+
+
+"----------------------------
+" Complete
+"----------------------------
+
+set wildmenu
+set wildmode=list:full
+set history=1000
+set complete+=k
+
 
 "----------------------------
 " Input assist
