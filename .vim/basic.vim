@@ -23,32 +23,8 @@ augroup END
 set number
 set ruler
 set notitle
-
-
-
-colorscheme molokai
-syntax on
-filetype plugin indent on
-
-function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
-endfunction
-
-if has('syntax')
-  augroup ZenkakuSpace
-    autocmd!
-    autocmd ColorScheme       * call ZenkakuSpace()
-    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
-  augroup END
-  call ZenkakuSpace()
-endif
-
-cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
-cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
-
+set visualbell t_vb=
 set wrap
-set t_vb=
-set novisualbell
 set wildmenu
 set statusline=2
 set laststatus=2
@@ -72,6 +48,7 @@ set noincsearch
 set nowritebackup
 set nobackup
 set noswapfile
+set notimeout
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
 set list
@@ -80,6 +57,29 @@ set virtualedit=all
 set matchtime=3
 set matchpairs& matchpairs+=<:>
 set clipboard+=autoselect
+
+
+
+colorscheme molokai
+syntax on
+filetype plugin indent on
+
+function! ZenkakuSpace()
+  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+endfunction
+
+if has('syntax')
+  augroup ZenkakuSpace
+    autocmd!
+    autocmd ColorScheme       * call ZenkakuSpace()
+    autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
+  augroup END
+  call ZenkakuSpace()
+endif
+
+cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
+cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
+
 vmap <C-c> :w !xsel -ib<CR><CR>
 
 " NERDTree
