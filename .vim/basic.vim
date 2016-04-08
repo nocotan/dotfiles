@@ -1,6 +1,7 @@
 "----------------------------
 " encoding
-" ---------------------------
+"----------------------------
+
 set encoding=utf-8
 scriptencoding utf-8
 set fileencoding=utf-8
@@ -10,6 +11,18 @@ set fileencodings=ucs-bom,utf-8,cp932,sjis,euc-jp,iso-2022-jp
 set fileformat=unix
 set fileformats=unix,dos,mac
 
+
+"----------------------------
+" Common
+"----------------------------
+" reset autocmd
+augroup vimrc
+  autocmd!
+augroup END
+
+set number
+set ruler
+set notitle
 
 
 
@@ -33,9 +46,6 @@ endif
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
-set title
-set ruler
-set number
 set wrap
 set t_vb=
 set novisualbell
