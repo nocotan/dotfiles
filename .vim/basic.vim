@@ -20,6 +20,7 @@ augroup vimrc
   autocmd!
 augroup END
 
+set ambiwidth=double
 set backspace=indent,eol,start
 set cmdheight=2
 set foldlevel=99
@@ -32,6 +33,7 @@ set noswapfile
 set notimeout
 set notitle
 set nowritebackup
+set nrformats=
 set number
 set ruler
 set scrolloff=3
