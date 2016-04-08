@@ -47,8 +47,6 @@ set helplang=ja,en
 set foldlevel=99
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
-set list
-set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
 set virtualedit=all
 set matchtime=3
 set matchpairs& matchpairs+=<:>
@@ -113,6 +111,11 @@ set wrapscan
 "----------------------------
 " Input assist
 "----------------------------
+
+
+set list
+set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
+
 
 
 function! ZenkakuSpace()
