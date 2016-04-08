@@ -27,10 +27,6 @@ set visualbell t_vb=
 set wrap
 set wildmenu
 set cmdheight=2
-set expandtab
-set tabstop=2
-set softtabstop=0
-set shiftwidth=2
 set cindent
 set smarttab
 set showcmd
@@ -114,7 +110,20 @@ set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
 set whichwrap=b,s,h,l,<,>,[,]
 set showmatch
 set matchtime=3
+set expandtab
+set tabstop=2
+set softtabstop=0
+set shiftwidth=2
+set display=lastline
 
+" 括弧の補完
+inoremap () ()<Left>
+inoremap "" ""<Left>
+inoremap [] []<Left>
+inoremap {} {}<Left>
+inoremap '' ''<Left>
+inoremap <> <><Left>
+inoremap ** **<Left>
 
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
