@@ -37,8 +37,6 @@ set smartindent
 set smarttab
 set whichwrap=b,s,h,l,<,>,[,]
 set showcmd
-set ignorecase
-set smartcase
 set nowritebackup
 set nobackup
 set noswapfile
@@ -108,8 +106,9 @@ set autoindent
 
 set incsearch
 set hlsearch
-
-
+set ignorecase
+set smartcase
+set wrapscan
 
 "----------------------------
 " Input assist
