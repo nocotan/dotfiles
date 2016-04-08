@@ -58,11 +58,6 @@ set colorcolumn=80
 set statusline=2
 set laststatus=2
 
-" lightline.vim
-let g:lightline = {
-  \ 'colorcheme': 'landscape',
-  \ }
-
 set cursorline
 highlight clear CursorLine
 highlight CursorLine ctermbg=17 guibg=black
@@ -163,11 +158,36 @@ vmap <C-c> :w !xsel -ib<CR><CR>
 
 
 
-" NERDTree
+"----------------------------
+" Plugins
+"----------------------------
+
+" #NERDTree
 let g:NERDTreeShowBookmarks=1
 if !argc()
   autocmd vimenter * NERDTree|normal gg3j
 endif
 
-
-
+" #lightline
+let g:lightline = {
+       \ 'active': {
+       \   'right': [ [ 'syntastic', 'lineinfo' ],
+       \              [ 'percent' ],
+       \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+       \ },
+       \ 'component_expand': {
+       \   'syntastic': 'SyntasticStatuslineFlag',
+       \ },
+       \ 'component_type': {
+       \   'syntastic': 'error',
+       \ }
+       \ }
+let g:syntastic_mode_map = { 'mode': 'passive' }
+augroup AutoSyntastic
+  autocmd!
+  autocmd BufWritePost *.c,*.cpp call s:syntastic()
+augroup END
+function! s:syntastic()
+  SyntasticCheck
+  call lightline#update()
+endfunction
