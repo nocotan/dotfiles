@@ -173,6 +173,30 @@ else
   let vimrcbody = '$HOME/.vimrc'
 endif
 
+function! OpenFile(file)
+  let empty_buffer=
+    \ line('$')==1 && strlen(getline('1'))==0
+  if empty_buffer && !&modified
+    execute 'e ' . a:file
+  else
+    execute 'tabnew ' . a:file
+  endif
+endfunction
+
+command! OpenMyVimrc call OpenFile(vimrcbody)
+nnoremap <Space><Space> :<C-u>OpenMyVimrc<CR>
+
+" easy reload vimrc
+function! SourceIfExists(file)
+  if filereadable(expand(a:file))
+    execute 'source ' . a:file
+  endif
+  echo 'Reload vimrc.'
+endfunction
+
+nnoremap <F5> <Esc>:<C-u>source $MYVIMRC<CR>
+      \ :source $MYVIMRC<CR>
+      \ :call SourceIfExists('~/vimfiles/ftplugin/' . &filetype . '.vim')<CR>
 
 
 "----------------------------
