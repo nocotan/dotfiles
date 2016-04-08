@@ -26,11 +26,7 @@ set notitle
 set visualbell t_vb=
 set wrap
 set wildmenu
-set statusline=2
-set laststatus=2
 set cmdheight=2
-set colorcolumn=80
-set t_Co=256
 set expandtab
 set tabstop=2
 set softtabstop=0
@@ -71,9 +67,35 @@ colorscheme molokai
 syntax on
 highlight Normal ctermbg=none
 
+set t_Co=256
+set colorcolumn=80
 
+set statusline=2
+set laststatus=2
+
+set cursorline
+highlight clear CursorLine
+highlight CursorLine ctermbg=17 guibg=black
+
+augroup cch
+  autocmd!
+  autocmd WinLeave * set nocursorline
+  autocmd WinEnter,BufRead * set cursorline
+augroup END
+
+highlight SpellBad cterm=underline ctermbg=0
+
+
+"----------------------------
+" Indent
+"----------------------------
 
 filetype plugin indent on
+
+
+
+
+
 
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
