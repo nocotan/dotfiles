@@ -31,9 +31,7 @@ set expandtab
 set tabstop=2
 set softtabstop=0
 set shiftwidth=2
-set showmatch
 set cindent
-set smartindent
 set smarttab
 set showcmd
 set nowritebackup
@@ -47,7 +45,6 @@ set foldlevel=99
 set backspace=indent,eol,start
 set clipboard=unnamed,autoselect
 set virtualedit=all
-set matchtime=3
 set matchpairs& matchpairs+=<:>
 set clipboard+=autoselect
 
@@ -92,7 +89,7 @@ highlight SpellBad cterm=underline ctermbg=0
 
 filetype plugin indent on
 set autoindent
-
+set smartindent
 
 
 
@@ -115,6 +112,8 @@ set wrapscan
 set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
 set whichwrap=b,s,h,l,<,>,[,]
+set showmatch
+set matchtime=3
 
 
 function! ZenkakuSpace()
