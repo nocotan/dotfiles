@@ -63,9 +63,16 @@ set matchpairs& matchpairs+=<:>
 set clipboard+=autoselect
 
 
+"----------------------------
+" Visual
+"----------------------------
 
 colorscheme molokai
 syntax on
+highlight Normal ctermbg=none
+
+
+
 filetype plugin indent on
 
 function! ZenkakuSpace()
