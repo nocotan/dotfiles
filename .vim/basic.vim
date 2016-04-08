@@ -163,6 +163,19 @@ vmap <C-c> :w !xsel -ib<CR><CR>
 
 
 "----------------------------
+" vimrc
+"----------------------------
+
+" easy open vimrc
+if has("win64")
+  let vimrcbody = '$HOME/_vimrc'
+else
+  let vimrcbody = '$HOME/.vimrc'
+endif
+
+
+
+"----------------------------
 " Plugins
 "----------------------------
 
