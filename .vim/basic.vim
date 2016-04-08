@@ -73,6 +73,11 @@ set colorcolumn=80
 set statusline=2
 set laststatus=2
 
+" lightline.vim
+let g:lightline = {
+  \ 'colorcheme': 'landscape',
+  \ }
+
 set cursorline
 highlight clear CursorLine
 highlight CursorLine ctermbg=17 guibg=black
@@ -84,6 +89,8 @@ augroup cch
 augroup END
 
 highlight SpellBad cterm=underline ctermbg=0
+
+
 
 
 "----------------------------
@@ -114,10 +121,19 @@ if has('syntax')
   call ZenkakuSpace()
 endif
 
+
+
+
+
+"----------------------------
+" Key mapping
+"----------------------------
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
 vmap <C-c> :w !xsel -ib<CR><CR>
+
+
 
 " NERDTree
 let g:NERDTreeShowBookmarks=1
@@ -125,7 +141,5 @@ if !argc()
   autocmd vimenter * NERDTree|normal gg3j
 endif
 
-" lightline.vim
-let g:lightline = {
-  \ 'colorcheme': 'landscape',
-  \ }
+
+
