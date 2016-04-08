@@ -96,7 +96,9 @@ filetype plugin indent on
 
 
 
-
+"----------------------------
+" Input assist
+"----------------------------
 function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
 endfunction
