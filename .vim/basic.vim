@@ -21,10 +21,13 @@ augroup vimrc
 augroup END
 
 set ambiwidth=double
+set autochdir
+set autoread
 set backspace=indent,eol,start
 set cmdheight=2
 set foldlevel=99
 set helplang=ja,en
+set helpheight=999
 set hidden
 set matchpairs& matchpairs+=<:>
 set nobackup
@@ -61,6 +64,7 @@ set colorcolumn=80
 set statusline=2
 set laststatus=2
 
+set cursorcolumn
 set cursorline
 highlight clear CursorLine
 highlight CursorLine ctermbg=17 guibg=black
