@@ -16,6 +16,7 @@ set fileformats=unix,dos,mac
 "----------------------------
 " Common
 "----------------------------
+
 " reset autocmd
 augroup vimrc
   autocmd!
@@ -52,6 +53,7 @@ set virtualedit=all
 set wrap
 
 
+
 "----------------------------
 " Visual
 "----------------------------
@@ -78,7 +80,6 @@ augroup cch
 augroup END
 
 highlight SpellBad cterm=underline ctermbg=0
-
 
 
 
@@ -115,10 +116,10 @@ set history=1000
 set complete+=k
 
 
+
 "----------------------------
 " Input assist
 "----------------------------
-
 
 set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
@@ -209,6 +210,7 @@ endfunction
 nnoremap <F5> <Esc>:<C-u>source $MYVIMRC<CR>
       \ :source $MYVIMRC<CR>
       \ :call SourceIfExists('~/vimfiles/ftplugin/' . &filetype . '.vim')<CR>
+
 
 
 "----------------------------
