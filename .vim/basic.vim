@@ -12,6 +12,7 @@ set fileformat=unix
 set fileformats=unix,dos,mac
 
 
+
 "----------------------------
 " Common
 "----------------------------
@@ -20,9 +21,9 @@ augroup vimrc
   autocmd!
 augroup END
 
-set ambiwidth=double
-set autochdir
-set autoread
+set ambiwidth=double              " Use twice the width of ASCII characters.
+set autochdir"                    " Switch chdir automatically.
+set autoread                      " Switch back to using the global value.
 set backspace=indent,eol,start
 set cmdheight=2
 set foldlevel=99
