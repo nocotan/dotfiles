@@ -40,6 +40,7 @@ set nrformats=
 set number
 set ruler
 set scrolloff=3
+set sidescrolloff=6
 set showcmd
 set smarttab
 set textwidth=0
