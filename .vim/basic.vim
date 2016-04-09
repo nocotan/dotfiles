@@ -22,7 +22,7 @@ augroup vimrc
 augroup END
 
 set ambiwidth=double              " Use twice the width of ASCII characters.
-set autochdir"                    " Switch chdir automatically.
+set autochdir                     " Switch chdir automatically.
 set autoread                      " Switch back to using the global value.
 set backspace=indent,eol,start
 set cmdheight=2
