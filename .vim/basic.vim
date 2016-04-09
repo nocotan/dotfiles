@@ -24,8 +24,8 @@ augroup END
 set ambiwidth=double              " Use twice the width of ASCII characters.
 set autochdir                     " Switch chdir automatically.
 set autoread                      " Switch back to using the global value.
-set backspace=indent,eol,start"   " Delete all by backspace"
-set cmdheight=2
+set backspace=indent,eol,start    " Delete all by backspace .
+set cmdheight=2                   " Show 2lines fo cmd line.
 set foldlevel=99
 set helplang=ja,en
 set helpheight=999
