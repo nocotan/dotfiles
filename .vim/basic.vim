@@ -72,7 +72,7 @@ set laststatus=2
 set cursorcolumn
 set cursorline
 highlight clear CursorLine
-highlight CursorLine ctermbg=17 guibg=black
+highlight CursorLine ctermbg=0
 
 augroup cch
   autocmd!
@@ -143,7 +143,7 @@ inoremap <> <><Left>
 inoremap ** **<Left>
 
 function! ZenkakuSpace()
-  highlight ZenkakuSpace cterm=reverse ctermfg=DarkMagenta gui=reverse guifg=DarkMagenta
+  highlight ZenkakuSpace cterm=reverse ctermfg=Black gui=reverse
 endfunction
 
 if has('syntax')
@@ -223,14 +223,6 @@ let g:NERDTreeShowBookmarks=1
 if !argc()
   autocmd vimenter * NERDTree|normal gg3j
 endif
-
-
-"# neocomplete
-let g:acp_enableAtStartup=0
-let g:neocomplete#enable_at_startup=1
-let g:neocomplete#source#syntax#min_keyword_length=3
-let g:neocomplete#lock_buffer_name_pattern='\*ku\*'
-let g:neocomplete#force_overwrite_completefunc=1
 
 
 "# lightline
