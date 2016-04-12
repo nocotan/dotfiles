@@ -37,6 +37,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundle 'w0ng/vim-hybrid'
 call neobundle#end()
 
 filetype plugin indent on

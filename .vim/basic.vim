@@ -58,7 +58,8 @@ set wrap
 " Visual
 "----------------------------
 
-colorscheme molokai
+set background=dark
+colorscheme hybrid
 syntax on
 highlight Normal ctermbg=none
 
