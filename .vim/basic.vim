@@ -28,22 +28,22 @@ set autoread                      " Switch back to using the global value.
 set backspace=indent,eol,start    " Delete all by backspace .
 set cmdheight=2                   " Show 2lines fo cmd line.
 set foldlevel=99
-set helplang=ja,en
+set helplang=ja,en"               " Help languages
 set helpheight=999
 set hidden
 set matchpairs& matchpairs+=<:>
-set nobackup
-set noerrorbells
-set noswapfile
-set notimeout
-set notitle
+set nobackup"                     "Don't create backupfiles
+set noerrorbells"                 "Don't sound errorbells
+set noswapfile"                   "Don't create swapfiles
+set notimeout"                    "Don't timeout
+set notitle"                      "Don't show title
 set nowritebackup
 set nrformats=
-set number
-set ruler
+set number"                       "Set line numbers
+set ruler"                        "Set column numbers"
 set scrolloff=3
 set sidescrolloff=6
-set showcmd
+set showcmd"                      "Show command
 set smarttab
 set textwidth=0
 set ttimeout
