@@ -59,8 +59,8 @@ set wrap
 "----------------------------
 
 set background=dark
-colorscheme hybrid
-syntax on
+colorscheme hybrid                " Set colorscheme
+syntax on"                        " Set syntax
 highlight Normal ctermbg=none
 
 set t_Co=256
