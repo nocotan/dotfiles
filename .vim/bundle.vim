@@ -11,6 +11,7 @@ call neobundle#begin(expand('~/.vim/bundle'))
 " NeoBundleのバージョン管理
 NeoBundleFetch 'Shougo/neobundle.vim'
 
+NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'andviro/flake8-vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'drillbits/nyan-modoki.vim'
@@ -33,6 +34,7 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tomasr/molokai'
 NeoBundle 'tomtom/tcomment_vim'
 NeoBundle 'tpope/vim-surround'
+NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-scripts/AnsiEsc.vim'

@@ -95,6 +95,27 @@ set cindent
 
 
 
+"---------------------------
+" Status line
+"--------------------------
+
+set statusline=%<
+set statusline+=[%n]
+set statusline+=%m
+set statusline+=%r
+set statusline+=%h
+set statusline+=%w
+set statusline+=%{'['.(&fenc!='?&fenc:&enc).':'.&ff.']'}}}
+set statusline+=%y
+set statusline+=\
+set statusline+=%{fugitive#statusline(}}}
+
+if winwidth(0) >= 130
+  set statusline+=%F
+else
+  set statusline+=%t
+endif
+
 "----------------------------
 " Search
 "----------------------------
@@ -227,24 +248,44 @@ endif
 
 "# lightline
 let g:lightline = {
+       \ 'colorscheme': 'wombat',
        \ 'active': {
        \   'right': [ [ 'syntastic', 'lineinfo' ],
        \              [ 'percent' ],
        \              [ 'fileformat', 'fileencoding', 'filetype' ] ]
+       \ },
+       \ 'component': {
+       \   'readonly': '%{&readonly?"⚷":""}',
        \ },
        \ 'component_expand': {
        \   'syntastic': 'SyntasticStatuslineFlag',
        \ },
        \ 'component_type': {
        \   'syntastic': 'error',
-       \ }
+       \ },
        \ }
 let g:syntastic_mode_map = { 'mode': 'passive' }
+
+augroup reload_vimrc
+  autocmd!
+  autocmd bufwritepost $MYVIMRC nested source $MYVIMRC
+augroup END
+
 augroup AutoSyntastic
   autocmd!
   autocmd BufWritePost *.c,*.cpp call s:syntastic()
 augroup END
+
 function! s:syntastic()
   SyntasticCheck
   call lightline#update()
 endfunction
+
+
+"---------------------------
+" vim-gitgutter
+"--------------------------
+
+let g:gitgutter_sign_added = '+'
+let g:gitgutter_sign_modified = '→'
+let g:gitgutter_sign_removed = '✗'
