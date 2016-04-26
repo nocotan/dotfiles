@@ -13,7 +13,6 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 
 NeoBundle 'andviro/flake8-vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'drillbits/nyan-modoki.vim'
 NeoBundle 'grep.vim'
 NeoBundle 'hail2u/vim-css3-syntax'
@@ -37,6 +36,7 @@ NeoBundle 'tpope/vim-surround'
 NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'w0ng/vim-hybrid'
 call neobundle#end()
 
