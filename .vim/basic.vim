@@ -297,4 +297,4 @@ let g:gitgutter_sign_removed = '✗'
 "---------------------------
 
 :helptags ~/.vim/bundle/evervim/doc/
-let g:evervim_devtoken="S=s676:U=7b2a0fe:E=15baa64a54e:C=15452b377f0:P=1cd:A=en-devtoken:V=2:H=951bac9f11775981cb2788d6868cebd2"
+source ~/.dotfiles/.vim/password.vim
