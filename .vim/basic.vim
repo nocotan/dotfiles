@@ -61,7 +61,7 @@ set wrap
 set background=dark
 colorscheme hybrid                " Set colorscheme
 syntax on"                        " Set syntax
-highlight Normal ctermbg=none
+highlight Normal ctermbg=None
 
 set t_Co=256
 set colorcolumn=80
