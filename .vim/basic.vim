@@ -22,12 +22,8 @@ augroup vimrc
   autocmd!
 augroup END
 
-" 2byte半角
-set ambiwidth=double
 " 自動でカレントディレクトリに切り替え
 set autochdir
-" 外部で変更のあったファイルを自動で読み込み
-set autoread
 " バックスペースで何でも消せるようにする
 set backspace=indent,eol,start
 " コマンドラインの高さを2に設定
@@ -36,15 +32,10 @@ set foldlevel=99
 " サポートする言語
 set helplang=ja,en
 set helpheight=999
-set hidden
 set lazyredraw
 set matchpairs& matchpairs+=<:>
-" バックアップファイルを作らない
-set nobackup
 " エラーベルを鳴らさない
 set noerrorbells
-" スワップファイルを作らない
-set noswapfile
 " タイムアウトしない
 set notimeout
 " タイトルを表示しない
@@ -67,6 +58,27 @@ set ttyfast
 set visualbell t_vb=
 set virtualedit=block
 set wrap
+
+
+
+"----------------------------
+" File
+"----------------------------
+
+
+" 2byte半角
+set ambiwidth=double
+" 外部で変更のあったファイルを自動で読み込み
+set autoread
+" 複数ファイルを開けるようにする
+set hidden
+" バックアップファイルを作らない
+set nobackup
+" スワップファイルを作らない
+set noswapfile
+
+" 保存時に行末の空白を除去
+autocmd BufWritePre * :%s/\s\+$//ge
 
 
 
