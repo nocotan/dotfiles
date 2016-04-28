@@ -17,39 +17,55 @@ set fileformats=unix,dos,mac
 " Common
 "----------------------------
 
-" reset autocmd
+" autocmd初期化
 augroup vimrc
   autocmd!
 augroup END
 
-set ambiwidth=double              " Use twice the width of ASCII characters.
-set autochdir                     " Switch chdir automatically.
-set autoread                      " Switch back to using the global value.
-set backspace=indent,eol,start    " Delete all by backspace .
-set cmdheight=2                   " Show 2lines fo cmd line.
+" 2byte半角
+set ambiwidth=double
+" 自動でカレントディレクトリに切り替え
+set autochdir
+" 外部で変更のあったファイルを自動で読み込み
+set autoread
+" バックスペースで何でも消せるようにする
+set backspace=indent,eol,start
+" コマンドラインの高さを2に設定
+set cmdheight=2
 set foldlevel=99
-set helplang=ja,en"               " Help languages
+" サポートする言語
+set helplang=ja,en
 set helpheight=999
 set hidden
+set lazyredraw
 set matchpairs& matchpairs+=<:>
-set nobackup"                     "Don't create backupfiles
-set noerrorbells"                 "Don't sound errorbells
-set noswapfile"                   "Don't create swapfiles
-set notimeout"                    "Don't timeout
-set notitle"                      "Don't show title
+" バックアップファイルを作らない
+set nobackup
+" エラーベルを鳴らさない
+set noerrorbells
+" スワップファイルを作らない
+set noswapfile
+" タイムアウトしない
+set notimeout
+" タイトルを表示しない
+set notitle
 set nowritebackup
 set nrformats=
-set number"                       "Set line numbers
-set ruler"                        "Set column numbers"
+" 行番号を表示
+set number
+" 列番号を表示
+set ruler
 set scrolloff=3
 set sidescrolloff=6
-set showcmd"                      "Show command
+" コマンドを表示
+set showcmd
 set smarttab
 set textwidth=0
 set ttimeout
 set timeoutlen=100
+set ttyfast
 set visualbell t_vb=
-set virtualedit=all
+set virtualedit=block
 set wrap
 
 
@@ -58,9 +74,12 @@ set wrap
 " Visual
 "----------------------------
 
+" 背景色を暗くする
 set background=dark
-colorscheme hybrid                " Set colorscheme
-syntax on"                        " Set syntax
+" カラースキームを指定
+colorscheme hybrid
+" シンタックスをonにする
+syntax on
 highlight Normal ctermbg=None
 
 set t_Co=256
@@ -108,6 +127,7 @@ set statusline+=%w
 set statusline+=%{'['.(&fenc!='?&fenc:&enc).':'.&ff.']'}}}
 set statusline+=%y
 set statusline+=\
+set statusline+=[%{&fileformat}]
 set statusline+=%{fugitive#statusline(}}}
 
 if winwidth(0) >= 130
@@ -120,8 +140,8 @@ endif
 " Search
 "----------------------------
 
-set incsearch
 set hlsearch
+set incsearch
 set ignorecase
 set smartcase
 set wrapscan
@@ -143,17 +163,17 @@ set complete+=k
 " Input assist
 "----------------------------
 
+set display=lastline
+set expandtab
+set formatoptions-=c
 set list
 set listchars=tab:>.,trail:_,eol:↲,extends:>,precedes:<,nbsp:%
-set whichwrap=b,s,h,l,<,>,[,]
-set showmatch
 set matchtime=3
-set expandtab
-set tabstop=2
+set showmatch
 set softtabstop=0
 set shiftwidth=2
-set display=lastline
-
+set tabstop=2
+set whichwrap=b,s,h,l,<,>,[,]
 " 括弧の補完
 inoremap () ()<Left>
 inoremap "" ""<Left>
@@ -189,10 +209,27 @@ set clipboard+=autoselect
 
 
 "----------------------------
+" mouse
+"----------------------------
+
+if has("mouse")
+  set mouse=a
+  set guioptions+=a
+  set ttymouse=xterm2
+endif
+
+"----------------------------
 " Key mapping
 "----------------------------
-nmap <silent> <Esc><Esc> :nohlsearch<CR>
 
+" esc2回で検索ハイライトを消す
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
+" Shift + 矢印でウィンドウサイズを変更
+nnoremap <S-Left> <C-w><<CR>
+nnoremap <S-Right> <C-w>><CR>
+nnoremap <S-Up> <C-w>-<CR>
+nnoremap <S-Down> <C-w>+<CR>
+" jjでノーマルモードに移行
 inoremap jj <Esc>
 
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'

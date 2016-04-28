@@ -47,6 +47,7 @@ NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'w0ng/vim-hybrid'
 call neobundle#end()
 
-filetype plugin indent on
+filetype indent on
+filetype plugin on
 
 NeoBundleCheck
