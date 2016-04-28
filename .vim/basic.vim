@@ -183,6 +183,7 @@ endif
 "----------------------------
 
 set clipboard=unnamed,autoselect
+set clipboard=unnamedplus
 set clipboard+=autoselect
 
 
@@ -190,6 +191,9 @@ set clipboard+=autoselect
 "----------------------------
 " Key mapping
 "----------------------------
+
+inoremap jj <Esc>
+
 cnoremap <expr> / getcmdtype() == '/' ? '\/' : '/'
 cnoremap <expr> ? getcmdtype() == '?' ? '\?' : '?'
 
@@ -298,3 +302,18 @@ let g:gitgutter_sign_removed = '✗'
 
 :helptags ~/.vim/bundle/evervim/doc/
 source ~/.dotfiles/.vim/password.vim
+
+
+
+"---------------------------
+" vim-markdown
+"---------------------------
+autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
+autocmd! FileType markdown hi! def link markdownItalic Normal
+autocmd FileType markdown set commentstring=<\!--\ %s\ -->
+
+let g:vim_markdown_no_default_key_mappings = 1
+let g:vim_markdown_math = 1
+let g:vim_markdown_frontmatter = 1
+let g:vim_markdown_toc_autofit = 1
+let g:vim_markdown_folding_style_pythonic = 1
