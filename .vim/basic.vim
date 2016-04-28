@@ -191,6 +191,7 @@ set clipboard+=autoselect
 "----------------------------
 " Key mapping
 "----------------------------
+nmap <silent> <Esc><Esc> :nohlsearch<CR>
 
 inoremap jj <Esc>
 
