@@ -293,6 +293,19 @@ nnoremap <F5> <Esc>:<C-u>source $MYVIMRC<CR>
 " Plugins
 "----------------------------
 
+"# neocomplete
+
+" 自動補完のポップアップ非表示
+let g:acp_enableAtStartup=0
+" neocompleteを使用する
+let g:neocomplete#enable_at_startup=1
+" smartcaseを使用する
+let g:neocomplete#enable_smart_case=1
+" シンタックスの長さを最小限にする
+let g:neocomplete#sources#syntax#min_keyword_length=3
+let g:neocomplete#lock_buffer_name_pattern='\*ku\*'
+
+
 "# NERDTree
 let g:NERDTreeShowBookmarks=1
 if !argc()
@@ -336,28 +349,20 @@ function! s:syntastic()
 endfunction
 
 
-"---------------------------
-" vim-gitgutter
-"---------------------------
-
+"# vim-gitgutter
 let g:gitgutter_sign_added = '+'
 let g:gitgutter_sign_modified = '→'
 let g:gitgutter_sign_removed = '✗'
 
 
 
-"---------------------------
-" evervim
-"---------------------------
-
+"# evervim
 :helptags ~/.vim/bundle/evervim/doc/
 source ~/.dotfiles/.vim/password.vim
 
 
 
-"---------------------------
-" vim-markdown
-"---------------------------
+"# vim-markdown
 autocmd BufRead,BufNewFile *.{mkd,md} set filetype=markdown
 autocmd! FileType markdown hi! def link markdownItalic Normal
 autocmd FileType markdown set commentstring=<\!--\ %s\ -->
