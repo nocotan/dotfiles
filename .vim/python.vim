@@ -10,16 +10,6 @@ function! s:hooks.on_source(bundle)
   let g:jedi#goto_command = '<Leader>G'
 endfunction
 
-autocmd FileType python setlocal omnifunc=jedi#completions
-let g:jedi#completions_enabled=0
-let g:jedi#auto_vim_configuration=0
-
-if !exists('g:neocomplete#force_omni_input_patterns')
-  let g:neocomplete#force_omni_input_patterns={}
-endif
-
-let g:neocomplete#force_omni_input_patterns.python = '\h\w*\|[^. \t]\.\w*'
-
 if version < 600
     syntax clear
 elseif exists('b:current_after_syntax')
