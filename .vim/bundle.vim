@@ -24,8 +24,10 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'jmcantrell/vim-virtualenv'
 NeoBundle 'kakkyz81/evervim'
 NeoBundle 'kannokanno/previm'
+NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'lambdalisue/vim-django-support'
 NeoBundle 'mattn/emmet-vim'
+NeoBundle 'mattn/webapi-vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'nathanaelkane/vim-indent-guides'
 NeoBundle 'othree/html5.vim'
@@ -46,7 +48,9 @@ NeoBundle 'vim-scripts/AnsiEsc.vim'
 NeoBundle 'vim-scripts/errormarker.vim'
 NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'wesleyche/SrcExpl'
 NeoBundle 'w0ng/vim-hybrid'
+
 call neobundle#end()
 
 filetype indent on

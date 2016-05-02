@@ -317,7 +317,9 @@ nnoremap <F5> <Esc>:<C-u>source $MYVIMRC<CR>
 "# NERDTree
 let g:NERDTreeShowBookmarks=1
 if !argc()
+  autocmd vimenter * :SrcExplToggle
   autocmd vimenter * NERDTree|normal gg3j
+  autocmd vimenter * :TagbarToggle
 endif
 
 
@@ -380,3 +382,35 @@ let g:vim_markdown_math = 1
 let g:vim_markdown_frontmatter = 1
 let g:vim_markdown_toc_autofit = 1
 let g:vim_markdown_folding_style_pythonic = 1
+
+
+
+"# SrcExpl
+if ! empty(neobundle#get("SrcExpl"))
+    let g:SrcExpl_RefreshTime = 1000
+    let g:SrcExpl_isUpdateTags = 0
+    let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase %'
+
+    function! g:SrcExpl_UpdateAllTags()
+      let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase -R .'
+      call g:SrcExpl_UpdateTags()
+      let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase %'
+    endfunction
+
+    let g:SrcExpl_winHeight = 14
+    nn [srce] <Nop>
+    nm <Leader>E [srce]
+    nn <silent> [srce]<CR> :SrcExplToggle<CR>
+    nn <silent> [srce]u :call g:SrcExpl_UpdateTags()<CR>
+    nn <silent> [srce]a :call g:SrcExpl_UpdateAllTags()<CR>
+    nn <silent> [srce]n :call g:SrcExpl_NextDef()<CR>
+    nn <silent> [srce]p :call g:SrcExpl_PrevDef()<CR>
+  endif
+
+
+
+"# tagbar
+if ! empty(neobundle#get("tagbar"))
+  let g:tagbar_width = 20
+  nn <silent> <leader>t :TagbarToggle<CR>
+endif
