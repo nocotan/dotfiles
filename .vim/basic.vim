@@ -314,6 +314,15 @@ nnoremap <F5> <Esc>:<C-u>source $MYVIMRC<CR>
 " Plugins
 "----------------------------
 
+"# quickrun
+if !exists("g:quickrun_config")
+  let g:quickrun_config = {}
+endif
+let g:quickrun_config["watchdogs_checker/_"] = {
+      \ "outputter/quickfix/open_cmd" : "",
+      \ }
+
+
 "# NERDTree
 let g:NERDTreeShowBookmarks=1
 if !argc()
