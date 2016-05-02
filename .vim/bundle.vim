@@ -43,6 +43,8 @@ NeoBundle 'Townk/vim-autoclose'
 NeoBundle 'tyru/open-browser.vim'
 NeoBundle 'ujihisa/unite-colorscheme'
 NeoBundle 'vim-scripts/AnsiEsc.vim'
+NeoBundle 'vim-scripts/errormarker.vim'
+NeoBundle 'vim-scripts/sudo.vim'
 NeoBundle 'wakatime/vim-wakatime'
 NeoBundle 'w0ng/vim-hybrid'
 call neobundle#end()

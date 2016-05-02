@@ -12,7 +12,6 @@ set fileformat=unix
 set fileformats=unix,dos,mac
 
 
-
 "----------------------------
 " Common
 "----------------------------
@@ -158,6 +157,19 @@ set ignorecase
 set smartcase
 set wrapscan
 
+" 検索結果の個数を表示
+
+nnoremap <expr> / _(":%s/<Cursor>/&/gn")
+function! s:move_cursor_pos_mapping(str, ...)
+  let left = get(a:, 1, "<Left>")
+  let lefts = join(map(split(matchstr(a:str, '.*<Cursor>\zs.*\ze'), '.\zs'), 'left'), "")
+  return substitute(a:str, '<Cursor>', '', '') . lefts
+endfunction
+
+function! _(str)
+  return s:move_cursor_pos_mapping(a:str, "\<Left>")
+endfunction
+
 
 
 "----------------------------
@@ -199,6 +211,7 @@ function! ZenkakuSpace()
   highlight ZenkakuSpace cterm=reverse ctermfg=Black gui=reverse
 endfunction
 
+" 全角スペース可視化
 if has('syntax')
   augroup ZenkakuSpace
     autocmd!
@@ -206,6 +219,14 @@ if has('syntax')
     autocmd VimEnter,WinEnter * match ZenkakuSpace /　/
   augroup END
   call ZenkakuSpace()
+endif
+
+" 最後のカーソル位置を復元する
+if has("sutocmd")
+  autocmd BufReadPost *
+  \ if line("'\"") > 0 && line ("'\"") <= line("$") |
+  \ exe "normal!" g'\"" |
+  \ endif
 endif
 
 
@@ -255,7 +276,7 @@ vmap <C-c> :w !xsel -ib<CR><CR>
 " vimrc
 "----------------------------
 
-" easy open vimrc
+" 簡単にvimrcを開く
 if has("win64")
   let vimrcbody = '$HOME/_vimrc'
 else
@@ -275,7 +296,7 @@ endfunction
 command! OpenMyVimrc call OpenFile(vimrcbody)
 nnoremap <Space><Space> :<C-u>OpenMyVimrc<CR>
 
-" easy reload vimrc
+" 簡単にvimrcをリロード
 function! SourceIfExists(file)
   if filereadable(expand(a:file))
     execute 'source ' . a:file
