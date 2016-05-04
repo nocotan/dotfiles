@@ -1,66 +1,95 @@
-" 起動時にruntimepathにNeoBundleのパスを追加する
-if has('vim_starting')
-  if &compatible
-    set nocompatible
-  endif
-  set runtimepath+=~/.vim/bundle/neobundle.vim/
+" Flags
+let s:use_dein = 1
+
+" vi非互換
+if !&compatible
+  set nocompatible
 endif
 
-call neobundle#begin(expand('~/.vim/bundle'))
+" dein.vimのディレクトリ
+let s:vimdir = $HOME . "/.vim"
+if has("vim_starting")
+  if ! isdirectory(s:vimdir)
+    call system("mkdir " . s:vimdir)
+  endif
+endif
 
-" NeoBundleのバージョン管理
-NeoBundleFetch 'Shougo/neobundle.vim'
+" dein
+let s:dein_enabled = 0
+if s:use_dein && v:version >= 704
+  let s:dein_enabled = 1
+  let s:dein_dir = s:vimdir . '/dein'
+  let s:dein_github = s:dein_dir . '/repos/github.com'
+  let s:dein_repo_name = 'Shougo/dein.vim'
+  let s:dein_repo_dir = s:dein_github . '/' . s:dein_repo_name
 
-NeoBundle 'airblade/vim-gitgutter'
-NeoBundle 'bronson/vim-trailing-whitespace'
-NeoBundle 'davidhalter/jedi-vim'
-NeoBundle 'drillbits/nyan-modoki.vim'
-NeoBundle 'fisadev/vim-isort'
-NeoBundle 'grep.vim'
-NeoBundle 'hail2u/vim-css3-syntax'
-NeoBundle 'hynek/vim-python-pep8-indent'
-NeoBundle 'itchyny/landscape.vim'
-NeoBundle 'itchyny/lightline.vim'
-NeoBundle 'jmcantrell/vim-virtualenv'
-NeoBundle 'jceb/vim-hier'
-NeoBundle 'kakkyz81/evervim'
-NeoBundle 'kannokanno/previm'
-NeoBundle 'kchmck/vim-coffee-script'
-NeoBundle 'lambdalisue/vim-django-support'
-NeoBundle 'mattn/emmet-vim'
-NeoBundle 'mattn/webapi-vim'
-NeoBundle 'majutsushi/tagbar'
-NeoBundle 'nathanaelkane/vim-indent-guides'
-NeoBundle 'othree/html5.vim'
-NeoBundle 'osyo-manga/shabadou.vim'
-NeoBundle 'osyo-manga/vim-watchdogs'
-NeoBundle 'plasticboy/vim-markdown'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'scrooloose/syntastic'
-NeoBundle 'Shougo/unite.vim'
-NeoBundle 'Shougo/unite-outline'
-NeoBundle 'Shougo/vimproc'
-NeoBundle 'tell-k/vim-autopep8'
-NeoBundle 'thinca/vim-quickrun'
-NeoBundle 'tomasr/molokai'
-NeoBundle 'tomtom/tcomment_vim'
-NeoBundle 'tpope/vim-surround'
-NeoBundle 'tpope/vim-fugitive'
-NeoBundle 'Townk/vim-autoclose'
-NeoBundle 'tyru/open-browser.vim'
-NeoBundle 'ujihisa/unite-colorscheme'
-NeoBundle 'vim-scripts/AnsiEsc.vim'
-NeoBundle 'vim-scripts/ctags.vim'
-NeoBundle 'vim-scripts/errormarker.vim'
-NeoBundle 'vim-scripts/Flake8-vim'
-NeoBundle 'vim-scripts/sudo.vim'
-NeoBundle 'wakatime/vim-wakatime'
-NeoBundle 'wesleyche/SrcExpl'
-NeoBundle 'w0ng/vim-hybrid'
+  if !isdirectory(s:dein_repo_dir)
+    echo "dein is not installed, install now "
+    let s:dein_repo = "https://github.com/" . s:dein_repo_name
+    echo "git clone " . s:dein_repo . " " . s:dein_repo_dir
+    call system("git clone " . s:dein_repo . " " . s:dein_repo_dir)
+  endif
+  let &runtimepath = &runtimepath . "," . s:dein_repo_dir
 
-call neobundle#end()
+  if dein#load_state(s:dein_dir)
+    call dein#begin(s:dein_dir)
+    call dein#add('Shougo/dein.vim')
+
+    call dein#add('airblade/vim-gitgutter')
+    call dein#add('bronson/vim-trailing-whitespace')
+    call dein#add('davidhalter/jedi-vim')
+    call dein#add('drillbits/nyan-modoki.vim')
+    call dein#add('fisadev/vim-isort')
+    call dein#add('grep.vim')
+    call dein#add('hail2u/vim-css3-syntax')
+    call dein#add('hynek/vim-python-pep8-indent')
+    call dein#add('itchyny/landscape.vim')
+    call dein#add('itchyny/lightline.vim')
+    call dein#add('jmcantrell/vim-virtualenv')
+    call dein#add('jceb/vim-hier')
+    call dein#add('kakkyz81/evervim')
+    call dein#add('kannokanno/previm')
+    call dein#add('kchmck/vim-coffee-script')
+    call dein#add('lambdalisue/vim-django-support')
+    call dein#add('mattn/emmet-vim')
+    call dein#add('mattn/webapi-vim')
+    call dein#add('majutsushi/tagbar')
+    call dein#add('nathanaelkane/vim-indent-guides')
+    call dein#add('othree/html5.vim')
+    call dein#add('osyo-manga/shabadou.vim')
+    call dein#add('osyo-manga/vim-watchdogs')
+    call dein#add('plasticboy/vim-markdown')
+    call dein#add('scrooloose/nerdtree')
+    call dein#add('scrooloose/syntastic')
+    call dein#add('Shougo/unite.vim')
+    call dein#add('Shougo/unite-outline')
+    call dein#add('Shougo/vimproc')
+    call dein#add('tell-k/vim-autopep8')
+    call dein#add('thinca/vim-quickrun')
+    call dein#add('tomasr/molokai')
+    call dein#add('tomtom/tcomment_vim')
+    call dein#add('tpope/vim-surround')
+    call dein#add('tpope/vim-fugitive')
+    call dein#add('Townk/vim-autoclose')
+    call dein#add('tyru/open-browser.vim')
+    call dein#add('ujihisa/unite-colorscheme')
+    call dein#add('vim-scripts/AnsiEsc.vim')
+    call dein#add('vim-scripts/ctags.vim')
+    call dein#add('vim-scripts/errormarker.vim')
+    call dein#add('vim-scripts/Flake8-vim')
+    call dein#add('vim-scripts/sudo.vim')
+    call dein#add('wakatime/vim-wakatime')
+    call dein#add('wesleyche/SrcExpl')
+    call dein#add('w0ng/vim-hybrid')
+
+    call dein#end()
+    call dein#save_state()
+  endif
+
+  if dein#check_install()
+    call dein#install()
+  endif
+endif
 
 filetype indent on
 filetype plugin on
-
-NeoBundleCheck

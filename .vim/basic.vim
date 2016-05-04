@@ -395,7 +395,7 @@ let g:vim_markdown_folding_style_pythonic = 1
 
 
 "# SrcExpl
-if ! empty(neobundle#get("SrcExpl"))
+if ! empty(dein#get("SrcExpl"))
     let g:SrcExpl_RefreshTime = 1000
     let g:SrcExpl_isUpdateTags = 0
     let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase %'
@@ -419,7 +419,7 @@ if ! empty(neobundle#get("SrcExpl"))
 
 
 "# tagbar
-if ! empty(neobundle#get("tagbar"))
+if ! empty(dein#get("tagbar"))
   let g:tagbar_width = 20
   nn <silent> <leader>t :TagbarToggle<CR>
 endif
