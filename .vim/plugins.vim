@@ -55,6 +55,7 @@ if s:use_dein && v:version >= 704
     call dein#add('mattn/emmet-vim')
     call dein#add('mattn/webapi-vim')
     call dein#add('majutsushi/tagbar')
+    call dein#add('miyakogi/seiya.vim')
     call dein#add('nathanaelkane/vim-indent-guides')
     call dein#add('othree/html5.vim')
     call dein#add('osyo-manga/shabadou.vim')

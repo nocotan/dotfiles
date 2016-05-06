@@ -435,3 +435,11 @@ endif
 
 "# lexima
 call lexima#add_rule({'at': '\%#.*[-0-9a-zA-Z_,:]', 'char': '{', 'input': '{'})
+
+
+
+"# Seiya.vim
+augroup seiya
+  au!
+  autocmd VimEnter * :SeiyaEnable
+augroup END
