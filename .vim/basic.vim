@@ -257,6 +257,14 @@ endif
 
 " esc2回で検索ハイライトを消す
 nmap <silent> <Esc><Esc> :nohlsearch<CR>
+" Shift + hで行頭に移動
+noremap <S-h> ^
+" Shift + jで段落末に移動
+noremap <S-j> }
+" Shift + kで段落はじめに移動
+noremap <S-k> {
+" Shift + lで行末に移動
+noremap <S-l> $
 " Shift + 矢印でウィンドウサイズを変更
 nnoremap <S-Left> <C-w><<CR>
 nnoremap <S-Right> <C-w>><CR>
@@ -321,7 +329,6 @@ endif
 let g:quickrun_config["watchdogs_checker/_"] = {
       \ "outputter/quickfix/open_cmd" : "",
       \ }
-
 
 "# NERDTree
 let g:NERDTreeShowBookmarks=1
@@ -423,3 +430,8 @@ if ! empty(dein#get("tagbar"))
   let g:tagbar_width = 20
   nn <silent> <leader>t :TagbarToggle<CR>
 endif
+
+
+
+"# lexima
+call lexima#add_rule({'at': '\%#.*[-0-9a-zA-Z_,:]', 'char': '{', 'input': '{'})

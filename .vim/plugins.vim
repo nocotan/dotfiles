@@ -37,6 +37,7 @@ if s:use_dein && v:version >= 704
 
     call dein#add('airblade/vim-gitgutter')
     call dein#add('bronson/vim-trailing-whitespace')
+    call dein#add('cohama/lexima.vim')
     call dein#add('davidhalter/jedi-vim')
     call dein#add('drillbits/nyan-modoki.vim')
     call dein#add('fisadev/vim-isort')
@@ -70,7 +71,6 @@ if s:use_dein && v:version >= 704
     call dein#add('tomtom/tcomment_vim')
     call dein#add('tpope/vim-surround')
     call dein#add('tpope/vim-fugitive')
-    call dein#add('Townk/vim-autoclose')
     call dein#add('tyru/open-browser.vim')
     call dein#add('ujihisa/unite-colorscheme')
     call dein#add('vim-scripts/AnsiEsc.vim')
