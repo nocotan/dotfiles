@@ -383,9 +383,6 @@ let g:gitgutter_sign_removed = '✗'
 
 
 "# evervim
-:helptags ~/.vim/bundle/evervim/doc/
-source ~/.dotfiles/.vim/password.vim
-
 
 
 "# vim-markdown

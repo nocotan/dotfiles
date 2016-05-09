@@ -76,6 +76,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
+ln -s ~/.dotfiles/.gemrc ~/.gemrc
+
+
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
+
+# pip install dir
+export PYTHONPATH=$HOME/local/lib/python3.4/site-packages:$PYTHONPATH
+
+# gem install dir
+export PATH=$PATH:/local/lib/gems/bin
+export GEM_HOME=~/local/lib/gems
