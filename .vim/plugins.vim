@@ -48,6 +48,7 @@ if s:use_dein && v:version >= 704
     call dein#add('itchyny/lightline.vim')
     call dein#add('jmcantrell/vim-virtualenv')
     call dein#add('jceb/vim-hier')
+    call dein#add('justmao945/vim-clang')
     call dein#add('kakkyz81/evervim')
     call dein#add('kannokanno/previm')
     call dein#add('kchmck/vim-coffee-script')

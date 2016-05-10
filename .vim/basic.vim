@@ -135,11 +135,10 @@ set statusline+=%m
 set statusline+=%r
 set statusline+=%h
 set statusline+=%w
-set statusline+=%{'['.(&fenc!='?&fenc:&enc).':'.&ff.']'}}}
 set statusline+=%y
 set statusline+=\
 set statusline+=[%{&fileformat}]
-set statusline+=%{fugitive#statusline(}}}
+set statusline+=%{fugitive#statusline()}}}
 
 if winwidth(0) >= 130
   set statusline+=%F
