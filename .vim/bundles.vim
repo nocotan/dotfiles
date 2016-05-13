@@ -49,47 +49,39 @@ NeoBundle 'tpope/vim-fugitive'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'bronson/vim-trailing-whitespace'
+NeoBundle 'itchyny/lightline.vim'
 
 "-------------
 " Other Utils
 "-------------
-" NeoBundle 'humiaozuzu/fcitx-status'
 NeoBundle 'nvie/vim-togglemouse'
-
+NeoBundle 'wakatime/vim-wakatime'
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
 "------- web backend ---------
 NeoBundle '2072/PHP-Indenting-for-VIm'
-"NeoBundle 'tpope/vim-rails'
 NeoBundle 'lepture/vim-jinja'
-"NeoBundle 'digitaltoad/vim-jade'
 
 "------- web frontend ----------
 NeoBundle 'othree/html5.vim'
-" NeoBundle 'tpope/vim-haml'
 NeoBundle 'pangloss/vim-javascript'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nono/jquery.vim'
-" NeoBundle 'groenewege/vim-less'
-" NeoBundle 'wavded/vim-stylus'
-" NeoBundle 'nono/vim-handlebars'
 
 "------- markup language -------
 NeoBundle 'tpope/vim-markdown'
-" NeoBundle 'timcharper/textile.vim'
+
+"--------C/C++--------
+NeoBundle 'justmao945/vim-clang'
 
 "------- Ruby --------
-" NeoBundle 'tpope/vim-endwise'
 
 "------- Go ----------
 NeoBundle 'fatih/vim-go'
 
 "------- FPs ------
 NeoBundle 'kien/rainbow_parentheses.vim'
-" NeoBundle 'wlangstroth/vim-racket'
-" NeoBundle 'vim-scripts/VimClojure'
-" NeoBundle 'rosstimson/scala-vim-support'
 
 "--------------
 " Color Schemes
