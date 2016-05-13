@@ -147,6 +147,12 @@ if executable('coffeetags')
     \ }
 endif
 
+" vim-startify
+let g:startify_files_number=10
+let g:startify_bookmarks=[
+            \ '~/.dotfiles/.vim/vimrc',
+            \ '~/.dotfiles/.vim/bundles.vim',
+            \ ]
 " Nerd Tree
 let NERDChristmasTree=0
 let NERDTreeWinSize=30
@@ -161,11 +167,13 @@ let NERDSpaceDelims=1
 " nmap <D-/> :NERDComToggleComment<cr>
 let NERDCompactSexyComs=1
 
+" lightline
+let g:lightline = {
+            \ 'colorscheme': 'wombat',
+            \ }
+
 " ZenCoding
 let g:user_emmet_expandabbr_key='<C-j>'
-
-" powerline
-"let g:Powerline_symbols = 'fancy'
 
 " NeoComplCache
 let g:neocomplcache_enable_at_startup=1

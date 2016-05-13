@@ -56,6 +56,7 @@ NeoBundle 'itchyny/lightline.vim'
 "-------------
 NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'mhinz/vim-startify'
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
