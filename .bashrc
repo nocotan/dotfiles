@@ -83,6 +83,7 @@ eval "$(pyenv init -)"
 
 # pip install dir
 export PYTHONPATH=$HOME/local/lib/python3.4/site-packages:$PYTHONPATH
+export PYTHONPATH=$HOME/local/lib/python2.7/site-packages:$PYTHONPATH
 
 # gem install dir
 export PATH=$PATH:/local/lib/gems/bin

@@ -1,5 +1,11 @@
-" auto completion無効化
+let g:syntastic_cpp_compiler='clang++'
+let g:syntastic_cpp_compiler_options='-std=c++11 -stdlib=libc++'
+
+"auto completion無効化
 let g:clang_auto=0
+let g:clang_complete_auto=0
+let g:clang_auto_select=0
+let g:clang_use_library=1
 
 " clang
 let g:clang_c_completeopt='menuone'
@@ -26,4 +32,5 @@ else
   let g:clang_exec='clang-format'
 endif
 
+let g:clang_c_options='-std=c11'
 let g:clang_cpp_options='-std=c++11 -stdlib=libc++'

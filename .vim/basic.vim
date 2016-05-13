@@ -321,6 +321,19 @@ nnoremap <F5> <Esc>:<C-u>source $MYVIMRC<CR>
 " Plugins
 "----------------------------
 
+"# neocomplete
+let g:neocomplete#enable_at_startup=1
+
+if !exists('g:neocomplete#force_omni_input_patterns')
+  let g:neocomplete#force_omni_input_patterns={}
+endif
+let g:neocomplete#force_overwrite_complete_completefunc=1
+let g:neocomplete#force_omni_input_patterns.c=
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*'
+let g:neocomplete#force_omni_input_patterns.cpp=
+      \ '[^.[:digit:] *\t]\%(\.\|->\)\w*\|\h\w*::\w*'
+
+
 "# quickrun
 if !exists("g:quickrun_config")
   let g:quickrun_config = {}
@@ -426,12 +439,6 @@ if ! empty(dein#get("tagbar"))
   let g:tagbar_width = 20
   nn <silent> <leader>t :TagbarToggle<CR>
 endif
-
-
-
-"# lexima
-call lexima#add_rule({'at': '\%#.*[-0-9a-zA-Z_,:]', 'char': '{', 'input': '{'})
-
 
 
 "# Seiya.vim
