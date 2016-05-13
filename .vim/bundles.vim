@@ -3,6 +3,7 @@ filetype off                   " required!
 
 set runtimepath+=~/.vim/bundle/neobundle.vim/
 
+
 " let Vundle manage Vundle
 " required!
 call neobundle#begin(expand('~/.vim/bundle/'))
@@ -113,5 +114,6 @@ NeoBundle 'fisadev/fisa-vim-colorscheme'
 NeoBundle 'w0ng/vim-hybrid'
 
 call neobundle#end()
+NeoBundleCheck
 
 filetype plugin indent on     " required!
