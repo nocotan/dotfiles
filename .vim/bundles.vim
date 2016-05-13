@@ -9,6 +9,20 @@ call neobundle#begin(expand('~/.vim/bundle/'))
 NeoBundleFetch 'Shougo/neobundle.vim'
 
 "------------------
+" vimproc
+"------------------
+NeoBundle 'Shougo/vimproc.vim', {
+            \ 'build': {
+            \     'windows': 'tools\\update-dll-mingw',
+            \     'cygwin': 'make -f make_cygwin.mak',
+            \     'mac': 'make -f make_mac.mak',
+            \     'linux': 'make',
+            \     'unix': 'gmake',
+            \     },
+            \ }
+
+
+"------------------
 " Code Completions
 "------------------
 NeoBundle 'Shougo/neocomplcache'
@@ -50,6 +64,8 @@ NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'thinca/vim-quickrun'
+NeoBundle 'Shougo/vimshell.vim'
 
 "-------------
 " Other Utils
