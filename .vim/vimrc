@@ -204,11 +204,17 @@ let g:vimshell_prompt_expr='getcwd().">"'
 let g:vimshell_prompt_pattern='^\f\+>'
 
 
+" syntastic
+let g:syntastic_signs=1
+let g:syntastic_auto_loc_list=2
+let g:syntastic_cpp_compiler='clang++'
+let g:syntastic_cpp_compiler_options='-std=c++11 -stdlib=libc++'
+
 " NeoComplCache
 let g:neocomplcache_enable_at_startup=1
 let g:neoComplcache_disableautocomplete=1
-"let g:neocomplcache_enable_underbar_completion = 1
-"let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_smart_case=1
 let g:neocomplcache_min_syntax_length = 3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
@@ -229,11 +235,6 @@ if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
 let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
-
-" vim-clang
-let g:clang_c_options='-std=c11'
-let g:clang_cpp_options='-std=c++1z -stdlib=libc++ --pedantic-errors'
-
 
 " SuperTab
 " let g:SuperTabDefultCompletionType='context'

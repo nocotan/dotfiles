@@ -91,9 +91,6 @@ NeoBundle 'nono/jquery.vim'
 "------- markup language -------
 NeoBundle 'tpope/vim-markdown'
 
-"--------C/C++--------
-NeoBundle 'justmao945/vim-clang'
-
 "------- Ruby --------
 
 "------- Go ----------
