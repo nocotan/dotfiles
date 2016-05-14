@@ -65,6 +65,7 @@ NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'osyo-manga/vim-anzu'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimshell.vim'
 

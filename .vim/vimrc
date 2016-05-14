@@ -159,7 +159,7 @@ let NERDChristmasTree=0
 let NERDTreeWinSize=30
 let NERDTreeChDirMode=2
 let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
-" let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
 let NERDTreeShowBookmarks=1
 let NERDTreeShowHidden=1
 let NERDTreeWinPos = "left"
@@ -172,6 +172,15 @@ let NERDCompactSexyComs=1
 " lightline
 let g:lightline = {
             \ 'colorscheme': 'wombat',
+            \ 'active' : {
+            \    'left':[
+            \        ['mode', 'paste'],
+            \        ['readonly', 'filename', 'modified', 'anzu']
+            \    ]
+            \ },
+            \ 'component_function': {
+            \   'anzu': 'anzu#search_status'
+            \ }
             \ }
 
 " ZenCoding
