@@ -77,7 +77,10 @@ inoremap jj <Esc>
 noremap j gj
 noremap k gk
 
-
+" close and indent
+inoremap {<Enter> {}<Left><CR><ESC><S-o>
+inoremap [<Enter> []<Left><CR><Esc><S-o>
+inoremap (<Enter> ()<Left><CR><Esc><S-o>
 
 "-----------------
 " Plugin settings
