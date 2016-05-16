@@ -68,13 +68,14 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'osyo-manga/vim-anzu'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'Shougo/vimshell.vim'
+NeoBundleLazy 'wesleyche/SrcExpl', {
+            \ "autoload" : { "commands": ["SrcExplToggle"]}}
 
 "-------------
 " Other Utils
 "-------------
 NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'wakatime/vim-wakatime'
-NeoBundle 'mhinz/vim-startify'
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------

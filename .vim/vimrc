@@ -190,15 +190,33 @@ if executable('coffeetags')
     \ }
 endif
 
-" vim-startify
-let g:startify_files_number=10
-let g:startify_bookmarks=[
-            \ '~/.dotfiles/.vim/vimrc',
-            \ '~/.dotfiles/.vim/bundles.vim',
-            \ ]
-" Nerd Tree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc()==0 && !exists("s:std in") | NERDTree | endif
+let g:tagbar_width=20
+nn <silent> <leader>t :TagbarToggle<CR>
+
+
+" SrcExpl
+let g:SrcExpl_refreshTime=1000
+let g:SrcExpl_isUpdateTags=0
+let g:SrcExpl_updateTagsCmd='ctags --sort=foldcase %'
+function! g:SrcExpl_UpdateAllTags()
+    let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase -R .'
+    call g:SrcExpl_UpdateTags()
+    let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase %'
+endfunction
+
+let g:SrcExpl_winHeight=10
+nn [srce] <Nop>
+nm <Leader>E [srce]
+nn <silent> [srce]<CR> :SrcExplToggle<CR>
+nn <silent> [srce]u :call g:SrcExpl_UpdateTags()<CR>
+nn <silent> [srce]a :call g:SrcExpl_UpdateAllTags()<CR>
+nn <silent> [srce]n :call g:SrcExpl_NextDef()<CR>
+nn <silent> [srce]p :call g:SrcExpl_PrevDef()<CR>
+
+
+" NERDTree
+
+nn <Leader>N :NERDTreeToggle<CR>
 
 let g:NERDTreeDirArrows = 1
 let NERDChristmasTree=0
@@ -234,6 +252,10 @@ let NERDSpaceDelims=1
 " nmap <D-/> :NERDComToggleComment<cr>
 let NERDCompactSexyComs=1
 
+
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in")| SrcExplToggle |endif
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in")| NERDTreeToggle |endif
 " lightline
 let g:lightline = {
             \ 'colorscheme': 'wombat',
