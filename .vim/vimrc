@@ -23,38 +23,59 @@ set cursorline cursorcolumn
 
 " search
 set incsearch
-"set highlight 	" conflict with highlight current line
+
+" set highlight
+" conflict with highlight current line
 set ignorecase
 set smartcase
 
 " editor settings
 set history=1000
-set nocompatible
-set nofoldenable                                                  " disable folding"
-set confirm                                                       " prompt when existing from an unsaved file
-set backspace=indent,eol,start                                    " More powerful backspacing
-set t_Co=256                                                      " Explicitly tell vim that the terminal has 256 colors "
-set mouse=a                                                       " use mouse in all modes
-set report=0                                                      " always report number of lines changed                "
-set nowrap                                                        " dont wrap lines
-set scrolloff=5                                                   " 5 lines above/below cursor when scrolling
-set number                                                        " show line numbers
-set showmatch                                                     " show matching bracket (briefly jump)
-set showcmd                                                       " show typed command in status bar
-set title                                                         " show file in titlebar
-set laststatus=2                                                  " use 2 lines for the status bar
-set matchtime=2                                                   " show matching bracket for 0.2 seconds
-" set relativenumber
+" disable folding
+set nofoldenable
+" prompt when existing from an unsaved fileet nocompatible
+set confirm
+" delete anything on backspace
+set backspace=indent,eol,start
+" Explicity tell vim that the terminal has 256 colors
+set t_Co=256
+" use mouse in all modes
+set mouse=a
+" always report number of lines changed
+set report=0
+" don't wrap lines
+set nowrap
+" 5 lines above/below cursor when scrolling
+set scrolloff=5
+" show line number
+set number
+" show matching bracket
+set showmatch
+" show typed command in status bar
+set showcmd
+" show file in titlebar
+set title
+" use 2 lines for the status bar
+set laststatus=2
+" show matching bracket for 0.2 seconds
+set matchtime=2
+" don't make backup file
+set nobackup
+" don't make swap file
+set noswapfile
 
 " Default Indentation
 set autoindent
 set smartindent     " indent when
-set tabstop=4       " tab width
-set softtabstop=4   " backspace
-set shiftwidth=4    " indent width
-" set textwidth=79
-" set smarttab
+set tabstop=2       " tab width
+set softtabstop=2  " backspace
+set shiftwidth=2    " indent width
+set textwidth=79
+set smarttab
 set expandtab       " expand tab to space
+
+au BufRead,BufNewFile silent *.cn
+set filetype=canon
 
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -63,9 +84,10 @@ autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
-
+autocmd FileType canon setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 " syntax support
-autocmd Syntax javascript set syntax=jquery   " JQuery syntax support
+" JQuery syntax support
+autocmd Syntax javascript set syntax=jquery
 " js
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
@@ -215,7 +237,6 @@ nn <silent> [srce]p :call g:SrcExpl_PrevDef()<CR>
 
 
 " NERDTree
-
 nn <Leader>N :NERDTreeToggle<CR>
 
 let g:NERDTreeDirArrows = 1
@@ -249,7 +270,6 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 
 " nerdcommenter
 let NERDSpaceDelims=1
-" nmap <D-/> :NERDComToggleComment<cr>
 let NERDCompactSexyComs=1
 
 
@@ -293,7 +313,7 @@ let g:neoComplcache_disableautocomplete=1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_smart_case=1
-let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_min_syntax_length=3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 set completeopt-=preview
 
@@ -314,7 +334,7 @@ endif
 let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
 
 " SuperTab
-" let g:SuperTabDefultCompletionType='context'
+let g:SuperTabDefultCompletionType='context'
 let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
 let g:SuperTabRetainCompletionType=2
 
@@ -375,7 +395,7 @@ nnoremap ; :
 " for macvim
 if has("gui_running")
     set go=aAce  " remove toolbar
-    "set transparency=30
+    set transparency=30
     set guifont=Monaco:h13
     set showtabline=2
     set columns=140

@@ -76,6 +76,7 @@ NeoBundleLazy 'wesleyche/SrcExpl', {
 "-------------
 NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'wakatime/vim-wakatime'
+NeoBundle 'rhysd/wandbox-vim'
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
