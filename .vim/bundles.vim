@@ -80,6 +80,8 @@ NeoBundle 'rhysd/wandbox-vim'
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
+NeoBundle 'tpope/vim-pathogen'
+
 "------- web backend ---------
 NeoBundle '2072/PHP-Indenting-for-VIm'
 NeoBundle 'lepture/vim-jinja'
