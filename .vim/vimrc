@@ -144,6 +144,9 @@ map <silent> [Tag]x :tabclose<CR>
 map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 
+" C++ template
+autocmd BufNewFile *.cpp 0r $HOME/.dotfiles/.vim/template/cpp.txt
+
 "-----------------
 " Plugin settings
 "-----------------
