@@ -308,8 +308,8 @@ let g:syntastic_cpp_compiler='clang++'
 let g:syntastic_cpp_compiler_options='-std=c++11 -stdlib=libc++'
 
 " NeoComplCache
+let g:acp_enableAtStartup=0
 let g:neocomplcache_enable_at_startup=1
-let g:neoComplcache_disableautocomplete=1
 let g:neocomplcache_enable_underbar_completion = 1
 let g:neocomplcache_enable_camel_case_completion = 1
 let g:neocomplcache_enable_smart_case=1
@@ -331,7 +331,9 @@ autocmd FileType c setlocal omnifunc=ccomplete#Complete
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
 endif
-let g:neocomplcache_omni_patterns.erlang = '[a-zA-Z]\|:'
+let g:neocomplcache_omni_patterns.erlang='[a-zA-Z]\|:'
+let g:neocomplcache_force_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplcache_omni_patterns.cpp='[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " SuperTab
 let g:SuperTabDefultCompletionType='context'

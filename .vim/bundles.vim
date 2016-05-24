@@ -97,6 +97,8 @@ NeoBundle 'tpope/vim-markdown'
 
 "------- Ruby --------
 
+"------ C/C++ --------
+
 "------- Go ----------
 NeoBundle 'fatih/vim-go'
 
