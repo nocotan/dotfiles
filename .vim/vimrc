@@ -306,9 +306,8 @@ let g:vimshell_prompt_pattern='^\f\+>'
 " syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
-let g:syntastic_cpp_checkers=['clang_check', 'clang++']
-let g:syntastic_cpp_compiler='clang++'
-let g:syntastic_cpp_compiler_options='-std=c++11 -stdlib=libc++'
+let g:syntastic_cpp_compiler='gcc'
+let g:syntastic_cpp_compiler_options=' -std=c++11'
 
 " NeoComplCache
 let g:acp_enableAtStartup=0
@@ -341,6 +340,13 @@ let g:neocomplcache_omni_patterns.cpp='[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 let g:neocomplcache_clang_use_library=1
 let g:neocomplcache_clang_library_path='/usr/local/lib'
 let g:neocomplcache_max_list=300
+
+" cpp_enhanced_highlight
+let g:cpp_class_scope_highlight=1
+let g:cpp_experimental_template_highlight=1
+
+let c_no_curly_error=1
+let g:ycm_show_diagnostics_ui=0
 
 " SuperTab
 let g:SuperTabDefultCompletionType='context'

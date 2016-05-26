@@ -98,6 +98,8 @@ NeoBundle 'tpope/vim-markdown'
 "------- Ruby --------
 
 "------ C/C++ --------
+NeoBundle 'vim-jp/cpp-vim'
+NeoBundle 'octol/vim-cpp-enhanced-highlight'
 
 "------- Go ----------
 NeoBundle 'fatih/vim-go'
