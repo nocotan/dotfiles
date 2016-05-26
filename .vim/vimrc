@@ -313,6 +313,10 @@ let g:user_emmet_expandabbr_key='<C-j>'
 
 " quickrun
 let g:quickrun_config=get(g:, 'quickrun_config', {})
+let g:quickrun_config.cpp={
+      \ 'command': 'g++',
+      \ 'cmdopt': '-std=c++11'
+      \}
 
 " vimshell
 let g:vimshell_prompt_expr='getcwd().">"'
