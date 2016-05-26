@@ -86,5 +86,6 @@ export PYTHONPATH=$HOME/local/lib/python3.4/site-packages:$PYTHONPATH
 export PYTHONPATH=$HOME/local/lib/python2.7/site-packages:$PYTHONPATH
 
 # gem install dir
-export PATH=$PATH:/local/lib/gems/bin
-export GEM_HOME=~/local/lib/gems
+export PATH="$HOME/.rbenv/bin:$PATH"
+export PATH=$HOME/.gem/ruby/2.3.0/bin:$PATH
+eval "$(rbenv init -)"
