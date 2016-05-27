@@ -1,4 +1,5 @@
 # alias
+alias pbcopy='xsel --clipboard --input'
 alias df='df -h'
 alias ll='ls -alF'
 alias la='ls -A'
