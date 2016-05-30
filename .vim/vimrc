@@ -147,20 +147,6 @@ map <silent> [Tag]p :tabprevious<CR>
 " C++ template
 autocmd BufNewFile *.cpp 0r $HOME/.dotfiles/.vim/template/cpp.cpp
 
-" foldmethod
-set foldenable
-set foldmethod=syntax
-
-autocmd InsertEnter * if !exists('w:last_fdm')
-      \| let w:last_fdm=&foldmethod
-      \| setlocal foldmethod=manual
-      \| endif
-autocmd InsertLeave,WinLeave * if exists('w:last_fdm')
-      \| let &l:foldmethod=w:last_fdm
-      \| unlet w:last_fdm
-      \| endif
-
-
 "-----------------
 " Plugin settings
 "-----------------
@@ -328,6 +314,7 @@ let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
 let g:syntastic_cpp_compiler='gcc'
 let g:syntastic_cpp_compiler_options=' -std=c++11'
+let g:syntastic_python_checkers=['flake8']
 
 " NeoComplCache
 let g:acp_enableAtStartup=0
