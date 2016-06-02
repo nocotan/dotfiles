@@ -94,7 +94,16 @@ let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
 
 " keybindings
-inoremap ;; <C-O>$;<CR>
+function! IsEndSemicolon()
+  let c = getline(".")[col("$")-2]
+  if c != ';'
+    return 1
+  else
+    return 0
+  endif
+endfunction
+
+inoremap <expr>;; IsEndSemicolon() ? "<C-O>$;<CR>" : "<C-O>$<CR>"
 inoremap jj <Esc>
 noremap j gj
 noremap k gk
