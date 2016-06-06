@@ -89,6 +89,14 @@ export PATH="$HOME/.rbenv/bin:$PATH"
 export PATH=$HOME/.gem/ruby/2.3.0/bin:$PATH
 eval "$(rbenv init -)"
 
+# ant
+ANT_ROOT=/usr/bin/ant
+export ANT_ROOT
+
+# android sdk
+ANDROID_SDK_ROOT=~/home/noco/Android
+export ANDROID_SDK_ROOT
+
 
 txtblk='\e[0;30m' # Black - Regular
 txtred='\e[0;31m' # Red
@@ -123,3 +131,6 @@ bakpur='\e[45m'   # Purple
 bakcyn='\e[46m'   # Cyan
 bakwht='\e[47m'   # White
 txtrst='\e[0m'    # Text Reset
+CPLUS_INCLUDE_PATH=/home/noco/.rbenv/shims:/home/noco/.gem/ruby/2.3.0/bin:/home/noco/.rbenv/bin:/home/noco/.pyenv/shims:/home/noco/.pyenv/bin::/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/include/pgsql:/usr/include/pgsql/server
+export C_INCLUDE_PATH=/home/noco/Github/cocos2d-x/templates:/home/noco/Github:/home/noco/Github/cocos2d-x/tools/cocos2d-console/bin:/home/noco/.rbenv/shims:/home/noco/.gem/ruby/2.3.0/bin:/home/noco/.rbenv/bin:/home/noco/.pyenv/shims:/home/noco/.pyenv/bin:/home/noco/Github/cocos2d-x/templates:/home/noco/Github:/home/noco/Github/cocos2d-x/tools/cocos2d-console/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/include/pgsql/server
+export CPATH=/home/noco/Github/cocos2d-x/templates:/home/noco/Github:/home/noco/Github/cocos2d-x/tools/cocos2d-console/bin:/home/noco/.rbenv/shims:/home/noco/.gem/ruby/2.3.0/bin:/home/noco/.rbenv/bin:/home/noco/.pyenv/shims:/home/noco/.pyenv/bin:/home/noco/Github/cocos2d-x/templates:/home/noco/Github:/home/noco/Github/cocos2d-x/tools/cocos2d-console/bin:/usr/local/bin:/usr/bin:/bin:/usr/bin/X11:/usr/games:/usr/include/pgsql/server
