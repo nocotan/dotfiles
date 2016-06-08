@@ -21,8 +21,10 @@
 using namespace std;
 
 #define ALL(g) (g).begin(), (g).end()
-#define REP(i, x, n) for(int i=x; i<n; i++)
+#define REP(i, x, n) for(auto i=x; i<n; i++)
 #define rep(i, n) REP(i, 0, n)
+#define RET(i, x, n) for(auto i=x; i<=n; i++)
+#define ret(i, n) REP(i, 0, n)
 #define F(i, j, k) fill(i[0], i[0]+j*j, k)
 #define P(p) cout << (p) << endl;
 #define EXIST(s, e) ((s).find(e)!=(s).end())
