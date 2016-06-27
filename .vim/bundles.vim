@@ -104,6 +104,19 @@ NeoBundle 'octol/vim-cpp-enhanced-highlight'
 "------- Go ----------
 NeoBundle 'fatih/vim-go'
 
+"------ Rust ---------
+NeoBundle 'rust-lang/rust.vim'
+NeoBundleLazy 'phildawes/racer', {
+      \ 'build' : {
+      \   'mac'  : 'cargo build --release',
+      \   'unix' : 'cargo build --release',
+      \ },
+      \ 'autoload' : {
+      \   'filetype' : 'rust',
+      \ },
+      \}
+NeoBundle 'rhysd/rust-doc.vim'
+
 "------- FPs ------
 NeoBundle 'kien/rainbow_parentheses.vim'
 
