@@ -155,7 +155,10 @@ map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 
 " C++ template
-" autocmd BufNewFile *.cpp 0r $HOME/.dotfiles/.vim/template/cpp.cpp
+" autocmd BufNewFile *.cpp 0r $HOME/.dotfiles/.vim/template/template.cpp
+
+" python template
+autocmd BufNewFile *.py 0r $HOME/.dotfiles/.vim/template/template.py
 
 "-----------------
 " Plugin settings
