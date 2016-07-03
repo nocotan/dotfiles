@@ -56,8 +56,6 @@ NeoBundle 'nathanaelkane/vim-indent-guides'
 " IDE features
 "--------------
 NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'humiaozuzu/TabBar'
-NeoBundle 'majutsushi/tagbar'
 NeoBundle 'mileszs/ack.vim'
 NeoBundle 'kien/ctrlp.vim'
 NeoBundle 'tpope/vim-fugitive'
@@ -75,8 +73,6 @@ NeoBundleLazy 'wesleyche/SrcExpl', {
 " Other Utils
 "-------------
 NeoBundle 'nvie/vim-togglemouse'
-NeoBundle 'wakatime/vim-wakatime'
-NeoBundle 'rhysd/wandbox-vim'
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
@@ -106,15 +102,6 @@ NeoBundle 'fatih/vim-go'
 
 "------ Rust ---------
 NeoBundle 'rust-lang/rust.vim'
-NeoBundleLazy 'phildawes/racer', {
-      \ 'build' : {
-      \   'mac'  : 'cargo build --release',
-      \   'unix' : 'cargo build --release',
-      \ },
-      \ 'autoload' : {
-      \   'filetype' : 'rust',
-      \ },
-      \}
 NeoBundle 'rhysd/rust-doc.vim'
 
 "------- FPs ------
