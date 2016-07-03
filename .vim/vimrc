@@ -53,8 +53,8 @@ set number
 set showmatch
 " show typed command in status bar
 set showcmd
-" show file in titlebar
-set title
+" show notitle
+set notitle
 " use 2 lines for the status bar
 set laststatus=2
 " show matching bracket for 0.2 seconds
