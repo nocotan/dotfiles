@@ -5,6 +5,8 @@
 - zshrc
 - vimrc
 - gemrc
-- C/C++ template
-- C/C++ include
-- Python template
+- include
+  * C/C++ include files
+- template
+  * C/C++ template file
+  * Python template file
