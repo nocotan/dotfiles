@@ -6,6 +6,7 @@
 - gemrc
 - vim
   * vimrc
+  * bundles
 - include
   * C/C++ include files
 - template
