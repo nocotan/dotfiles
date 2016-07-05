@@ -12,3 +12,4 @@
 - template
   * C/C++ template file
   * Python template file
+  * Ruby template file
