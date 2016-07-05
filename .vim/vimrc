@@ -449,6 +449,12 @@ if has("gui_running")
     map <D-0> :tablast<CR>
 endif
 
+map <C-g> :Gtags
+map <C-h> :Gtags -f %<CR>
+map <C-j> :GtagsCursor<CR>
+map <C-n> :cn<CR>
+map <C-p> :cp<CR>
+
 " Transmission
 if !has('gui_running')
     augroup seiya
