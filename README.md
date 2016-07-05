@@ -3,8 +3,9 @@
 
 - bashrc
 - zshrc
-- vimrc
 - gemrc
+- vim
+  * vimrc
 - include
   * C/C++ include files
 - template
