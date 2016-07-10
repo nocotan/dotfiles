@@ -369,3 +369,8 @@ if [[ $LANG == "C"  || $LANG == "" ]]; then
 fi
 
 export PATH="$PATH:$HOME/chppl-tool/chppl-tool/bin"
+
+# Editors
+export EDITOR='vim'
+export VISUAL='vim'
+export PAGER='less'
