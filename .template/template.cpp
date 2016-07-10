@@ -22,7 +22,8 @@
 using namespace std;
 
 // 基本テンプレート
-#define REP(i,n) for(int i=0; i<(int)n; ++i)
+#define rep(i,n) for(int i=0; i<(int)n; ++i)
+#define REP(i,x,n) for(int i=x; i<(int)n; ++i)
 #define FOR(i,c) for(__typeof((c).begin())!=(c).begin(); i!=(c).end(); ++i)
 #define ALL(c) (c).begin(), c.end()
 

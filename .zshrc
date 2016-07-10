@@ -367,3 +367,5 @@ fi
 if [[ $LANG == "C"  || $LANG == "" ]]; then
 	>&2 echo "$fg[red]The \$LANG variable is not set. This can cause a lot of problems.$reset_color"
 fi
+
+export PATH="$PATH:$HOME/chppl-tool/chppl-tool/bin"
