@@ -160,6 +160,11 @@ autocmd BufNewFile *.cpp 0r $HOME/.dotfiles/.template/template.cpp
 " python template
 autocmd BufNewFile *.py 0r $HOME/.dotfiles/.template/template.py
 
+" XMLSchema template
+autocmd BufNewFile *.xsd 0r $HOME/.dotfiles/.template/template.xsd
+
+" XML template
+autocmd BufNewFile *.xml 0r $HOME/.dotfiles/.template/template.xml
 "-----------------
 " Plugin settings
 "-----------------

@@ -1,4 +1,4 @@
-#define _GRIBCXX_DEBUG
+//#define _GRIBCXX_DEBUG
 #include <algorithm>
 #include <cctype>
 #include <climits>
@@ -33,6 +33,7 @@ typedef vector<double> vd;
 typedef vector<int> vi;
 typedef vector<long long> vl;
 typedef vector<long, long> pil;
+
 
 // グラフテンプレート
 typedef int Weight;
