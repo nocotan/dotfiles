@@ -86,7 +86,7 @@ class Ematrix
   private:
     int row;
     int col;
-    std::vector< std::vector<int> > value;
+    std::vector< std::vector<long long> > value;
   public:
     // 1行1列の行列
     Ematrix();
@@ -97,8 +97,8 @@ class Ematrix
     // コピーコンストラクタ
     Ematrix(const Ematrix&);
     // 添字演算子
-    inline std::vector<int> operator [](int) const;
-    inline std::vector<int>& operator [](int);
+    inline std::vector<long long> operator [](int) const;
+    inline std::vector<long long>& operator [](int);
     // 算術演算子
     const Ematrix operator +(const Ematrix&) const;
     const Ematrix operator -(const Ematrix&) const;
@@ -109,26 +109,29 @@ class Ematrix
     // 列数ゲッタ
     int get_col() const;
     // 要素ベクトルゲッタ
-    std::vector< std::vector<int> > get_value() const;
+    std::vector< std::vector<long long> > get_value() const;
 };
 
 Ematrix::Ematrix()
   :row(1), col(1),
-   value(std::vector< std::vector<int> >(1, std::vector<int>(1,0)))
+   value(std::vector< std::vector<long long> >(1,
+         std::vector<long long>(1,0)))
 {
 }
 
 Ematrix::Ematrix(int row, int col)
   :row(row),
    col(col),
-   value(std::vector< std::vector<int> >(row, std::vector<int>(col,0)))
+   value(std::vector< std::vector<long long> >(row,
+         std::vector<long long>(col,0)))
 {
 }
 
 Ematrix::Ematrix(int e)
   :row(e),
    col(e),
-   value(std::vector< std::vector<int> >(row, std::vector<int>(col,0)))
+   value(std::vector< std::vector<long long> >(row,
+         std::vector<long long>(col,0)))
 {
   int c = 0;
   for (int i=0; i<row; i++) {
@@ -144,12 +147,12 @@ Ematrix::Ematrix(const Ematrix& rhs)
   value = rhs.get_value();
 }
 
-inline std::vector<int> Ematrix::operator [](int index) const
+inline std::vector<long long> Ematrix::operator [](int index) const
 {
   return this->value[index];
 }
 
-inline std::vector<int>& Ematrix::operator [](int index)
+inline std::vector<long long>& Ematrix::operator [](int index)
 {
   return this->value[index];
 }
@@ -224,7 +227,7 @@ int Ematrix::get_col() const
   return this->col;
 }
 
-std::vector< std::vector<int> > Ematrix::get_value() const
+std::vector< std::vector<long long> > Ematrix::get_value() const
 {
   return this->value;
 }
