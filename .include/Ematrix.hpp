@@ -15,7 +15,6 @@ class Ematrix
     Ematrix();
     // 単位行列
     Ematrix(int);
-    cin >> n;
     // 行数と列数を指定した行列
     Ematrix(int, int);
     // コピーコンストラクタ
@@ -54,8 +53,8 @@ Ematrix::Ematrix(int row, int col)
 Ematrix::Ematrix(int e)
   :row(e),
    col(e),
-   value(std::vector< std::vector<long doublee> >(row,
-         std::vector<long doubl>(col,0)))
+   value(std::vector< std::vector<long double> >(row,
+         std::vector<long double>(col,0)))
 {
   int c = 0;
   for (int i=0; i<row; i++) {
