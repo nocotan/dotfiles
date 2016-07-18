@@ -106,6 +106,8 @@ alias ll='ls -alF'
 alias la='ls -A'
 alias l='ls -CF'
 alias vi='/usr/bin/vim'
+alias g++='g++ -std=c++11'
+alias cbp='xsel --clipboard --input'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert

@@ -100,6 +100,8 @@ alias fgrep="fgrep --color=auto"
 alias egrep="egrep --color=auto"
 # make less accept color codes and re-output them
 alias less="less -R"
+alias g++="g++ -std=c++11"
+alias cbp="xsel --clipboard --input"
 
 
 ##
