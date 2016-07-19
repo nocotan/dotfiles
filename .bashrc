@@ -152,3 +152,5 @@ export PATH="$PATH:$HOME/chppl-tool/chppl-tool/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_COMPLETION_TRIGGER='~~'
+export PATH="$HOME/.rbenv/bin:$PATH"
+eval "$(rbenv init -)"
