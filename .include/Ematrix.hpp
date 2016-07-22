@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 
+
 /*
  * 行列演算クラス
  */
