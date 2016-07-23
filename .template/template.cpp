@@ -79,6 +79,9 @@ typedef vector<Edges> Graph;
 typedef vector<Weight> Array;
 typedef vector<Array> Matrix;
 
+// 定数
+const ll MOD = 1000000007;
+
 int main() {
   return 0;
 }
