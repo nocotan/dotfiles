@@ -78,3 +78,7 @@ typedef vector<Edge> Edges;
 typedef vector<Edges> Graph;
 typedef vector<Weight> Array;
 typedef vector<Array> Matrix;
+
+int main() {
+  return 0;
+}
