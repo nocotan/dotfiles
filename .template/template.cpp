@@ -24,22 +24,29 @@ using namespace std;
 
 
 // 基本テンプレート
+#pragma region MACRO
 #define rep(i,n) for(int i=0; i<(int)n; ++i)
 #define REP(i,x,n) for(int i=x; i<(int)n; ++i)
 #define repi(i,n) for(int i=0; i<=(int)n; ++i)
 #define REPI(i,x,n) for(int i=x; i<=(int)n; ++i)
 #define FOR(i,c) for(__typeof((c).begin())!=(c).begin(); i!=(c).end(); ++i)
 #define ALL(c) (c).begin(), (c).end()
+#pragma endregion
 
+#pragma region TYPE_DEF
 typedef long long ll;
 typedef pair<int, int> pii;
-typedef vector<double> vd;
+typedef pair<string, string> pss;
 typedef vector<int> vi;
+typedef vector<double> vd;
 typedef vector<long long> vl;
-typedef vector<long, long> pil;
+typedef vector<long, long> vll;
+#pragma endregion
 
 
 // Effective std
+#pragma region ESTD
+
 template<typename C, typename T>
 constexpr int count(C& c, T t) { return count(ALL(c), t); }
 
@@ -58,10 +65,13 @@ constexpr void sort(C& c) { sort(ALL(c)); }
 template<typename C, typename Pred>
 constexpr void sort(C& c, Pred p) { sort(ALL(c), p); }
 
+#pragma endregion
+
 
 // グラフテンプレート
-typedef int Weight;
+#pragma region GRAPH
 
+typedef int Weight;
 struct Edge {
   int src, dst;
   Weight weight;
@@ -79,8 +89,14 @@ typedef vector<Edges> Graph;
 typedef vector<Weight> Array;
 typedef vector<Array> Matrix;
 
+#pragma endregion
+
 // 定数
-const ll MOD = 1000000007;
+#pragma region CONST_VAL
+#define PI (2*acos(0.0))
+#define EPS (1e-9)
+#define MOD (int)(1e9+7)
+#pragma endregion
 
 int main() {
   return 0;
