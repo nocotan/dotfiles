@@ -31,12 +31,15 @@ using namespace std;
 #define REPI(i,x,n) for(int i=x; i<=(int)n; ++i)
 #define FOR(i,c) for(__typeof((c).begin())!=(c).begin(); i!=(c).end(); ++i)
 #define ALL(c) (c).begin(), (c).end()
+#define mp make_pair
 #pragma endregion
 
 #pragma region TYPE_DEF
 typedef long long ll;
 typedef pair<int, int> pii;
 typedef pair<string, string> pss;
+typedef pair<string, int> psi;
+typedef pair<int, string> pis;
 typedef vector<int> vi;
 typedef vector<double> vd;
 typedef vector<long long> vl;
