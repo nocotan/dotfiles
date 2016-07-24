@@ -25,6 +25,7 @@ using namespace std;
 
 // 基本テンプレート
 #pragma region MACRO
+#define P(x) cout << (x) << endl
 #define rep(i,n) for(int i=0; i<(int)n; ++i)
 #define REP(i,x,n) for(int i=x; i<(int)n; ++i)
 #define repi(i,n) for(int i=0; i<=(int)n; ++i)
@@ -42,8 +43,8 @@ typedef pair<string, int> psi;
 typedef pair<int, string> pis;
 typedef vector<int> vi;
 typedef vector<double> vd;
-typedef vector<long long> vl;
-typedef vector<long, long> vll;
+typedef vector<long> vl;
+typedef vector<long long> vll;
 #pragma endregion
 
 
