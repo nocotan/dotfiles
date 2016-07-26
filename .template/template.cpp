@@ -95,6 +95,21 @@ typedef vector<Array> Matrix;
 
 #pragma endregion
 
+// 素数
+#pragma region PRIME
+bool is_prime(unsigned n) {
+  switch(n) {
+    case 0:
+    case 1: return false;
+    case 2: return true;
+  }
+  if (n%2==0) return false;
+  for (unsigned i=3; i*i<=n; i+=2)
+    if (n%i==0) return false;
+  return true;
+}
+#pragma endregion
+
 // 定数
 #pragma region CONST_VAL
 #define PI (2*acos(0.0))
