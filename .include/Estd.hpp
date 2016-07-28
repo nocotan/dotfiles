@@ -33,6 +33,11 @@ namespace Estd {
   void sort(C& c, Pred p) {
     std::sort(c.begin(), c.end(), p);
   }
+
+  template<typename C>
+  void reverse(C& c) {
+    std::reverse(c.begin(), c.end());
+  }
 }
 
 #endif
