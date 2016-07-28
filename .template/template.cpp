@@ -26,6 +26,7 @@ using namespace std;
 // 基本テンプレート
 #pragma region MACRO
 #define P(x) cout << (x) << endl
+#define p(x) cout << (x)
 #define rep(i,n) for(int i=0; i<(int)n; ++i)
 #define REP(i,x,n) for(int i=x; i<(int)n; ++i)
 #define repi(i,n) for(int i=0; i<=(int)n; ++i)
