@@ -48,6 +48,7 @@ typedef vector<int> vi;
 typedef vector<double> vd;
 typedef vector<long> vl;
 typedef vector<long long> vll;
+typedef vector<string> vs;
 #pragma endregion
 
 
