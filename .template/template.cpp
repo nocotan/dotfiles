@@ -109,6 +109,14 @@ bool is_prime(unsigned n) {
 }
 #pragma endregion
 
+// 大文字/小文字変換
+void mutal_tr(string &s) {
+  for(int i=s.size(); i--;) {
+    if(islower(s[i])) s[i] = toupper(s[i]);
+    else if (isupper(s[i])) s[i] = tolower(s[i]);
+  }
+}
+
 // 定数
 #pragma region CONST_VAL
 #define PI (2*acos(0.0))
