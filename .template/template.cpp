@@ -70,32 +70,8 @@ template<typename C, typename Pred>
 constexpr void sort(C& c, Pred p) { sort(ALL(c), p); }
 template<typename C>
 constexpr void reverse(C& c) { reverse(ALL(c)); }
-
 #pragma endregion
 
-
-// グラフテンプレート
-#pragma region GRAPH
-
-typedef int Weight;
-struct Edge {
-  int src, dst;
-  Weight weight;
-  Edge(int src, int dst, Weight weight) :
-    src(src), dst(dst), weight(weight) {}
-};
-
-bool operator < (const Edge &e, const Edge &f) {
-  return e.weight != f.weight ? e.weight > f.weight :
-    e.src != f.src ? e.src < f.src : e.dst < f.dst;
-}
-
-typedef vector<Edge> Edges;
-typedef vector<Edges> Graph;
-typedef vector<Weight> Array;
-typedef vector<Array> Matrix;
-
-#pragma endregion
 
 // 素数
 #pragma region PRIME
@@ -112,27 +88,49 @@ bool is_prime(unsigned n) {
 }
 #pragma endregion
 
+
 // 大文字/小文字変換
+#pragma region TRANSFORM
 void mutal_tr(string &s) {
   for(int i=s.size(); i--;) {
     if(islower(s[i])) s[i] = toupper(s[i]);
     else if (isupper(s[i])) s[i] = tolower(s[i]);
   }
 }
-void to_upper(string &s) {
-  for(int i=s.size(); i--;) s[i] = toupper(s[i]);
-}
-void to_lower(string &s) {
-  for(int i=s.size(); i--;) s[i] = tolower(s[i]);
-}
+void to_upper(string &s) { for(int i=s.size(); i--;) s[i] = toupper(s[i]); }
+void to_lower(string &s) { for(int i=s.size(); i--;) s[i] = tolower(s[i]); }
+#pragma endregion
+
 
 // 集合
+#pragma region SET
 template<class T>
 set<T> intersection(const set<T>& sa, const set<T>& sb) {
   set<T> ret;
   for(T a : sa) if(sb.find(a) != sb.end()) ret.insert(a);
   return ret;
 }
+#pragma endregion
+
+// Union Find
+#pragma region UF
+struct UnionFind {
+  vector<int> data;
+  UnionFind(int size) : data(size, -1) {}
+  bool union_set(int x, int y) {
+    x = root(x); y = root(y);
+    if(x!=y) {
+      if(data[y] < data[x]) swap(x, y);
+      data[x] += data[y]; data[y] = x;
+    }
+    return x != y;
+  }
+  bool find_set(int x, int y) { return root(x) == root(y); }
+  int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
+  int size(int x) { return -data[root(x)]; }
+};
+#pragma endregion
+
 
 // 定数
 #pragma region CONST_VAL
