@@ -117,6 +117,12 @@ void mutal_tr(string &s) {
     else if (isupper(s[i])) s[i] = tolower(s[i]);
   }
 }
+void to_upper(string &s) {
+  for(int i=s.size(); i--;) s[i] = toupper(s[i]);
+}
+void to_lower(string &s) {
+  for(int i=s.size(); i--;) s[i] = tolower(s[i]);
+}
 
 // 定数
 #pragma region CONST_VAL
