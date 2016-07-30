@@ -17,6 +17,7 @@
 #include <memory>
 #include <numeric>
 #include <queue>
+#include <set>
 #include <string>
 #include <utility>
 #include <vector>
@@ -122,6 +123,14 @@ void to_upper(string &s) {
 }
 void to_lower(string &s) {
   for(int i=s.size(); i--;) s[i] = tolower(s[i]);
+}
+
+// 集合
+template<class T>
+set<T> intersection(const set<T>& sa, const set<T>& sb) {
+  set<T> ret;
+  for(T a : sa) if(sb.find(a) != sb.end()) ret.insert(a);
+  return ret;
 }
 
 // 定数
