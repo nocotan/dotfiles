@@ -139,6 +139,7 @@ struct UnionFind {
 #define MOD (int)(1e9+7)
 #pragma endregion
 
-int main() {
-  return 0;
+int main()
+{
+    return 0;
 }
