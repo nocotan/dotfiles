@@ -60,32 +60,20 @@ template<typename C, typename T>
 constexpr int count(C& c, T t) { return count(ALL(c), t); }
 template<typename C, typename F>
 constexpr int count_if(C& c, F f) { return count_if(ALL(c), f); }
+template<typename C, typename T>
+void erase(C& c, T t) { remove(ALL(c), t), c.end(); }
+template<typename C>
+void remove(vector<C>& c, unsigned int index) { c.erase(c.begin()+index); }
 template<typename C, typename T, typename U>
 constexpr void replace(C& c, T t, U u) { replace(ALL(c), t, u); }
 template<typename C, typename F, typename U>
 constexpr void replace_if(C& c, F f, U u) { (ALL(c), f, u); }
 template<typename C>
+constexpr void reverse(C& c) { reverse(ALL(c)); }
+template<typename C>
 constexpr void sort(C& c) { sort(ALL(c)); }
 template<typename C, typename Pred>
 constexpr void sort(C& c, Pred p) { sort(ALL(c), p); }
-template<typename C>
-constexpr void reverse(C& c) { reverse(ALL(c)); }
-#pragma endregion
-
-
-// 素数
-#pragma region PRIME
-bool is_prime(unsigned n) {
-  switch(n) {
-    case 0:
-    case 1: return false;
-    case 2: return true;
-  }
-  if (n%2==0) return false;
-  for (unsigned i=3; i*i<=n; i+=2)
-    if (n%i==0) return false;
-  return true;
-}
 #pragma endregion
 
 
@@ -101,16 +89,6 @@ void to_upper(string &s) { for(int i=s.size(); i--;) s[i] = toupper(s[i]); }
 void to_lower(string &s) { for(int i=s.size(); i--;) s[i] = tolower(s[i]); }
 #pragma endregion
 
-
-// 集合
-#pragma region SET
-template<class T>
-set<T> intersection(const set<T>& sa, const set<T>& sb) {
-  set<T> ret;
-  for(T a : sa) if(sb.find(a) != sb.end()) ret.insert(a);
-  return ret;
-}
-#pragma endregion
 
 // Union Find
 #pragma region UF
