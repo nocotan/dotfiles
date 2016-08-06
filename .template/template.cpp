@@ -40,6 +40,7 @@ using namespace std;
 #define mp make_pair
 #pragma endregion
 
+// 型
 #pragma region TYPE_DEF
 typedef long long ll;
 typedef pair<int, int> pii;
@@ -52,7 +53,6 @@ typedef vector<long> vl;
 typedef vector<long long> vll;
 typedef vector<string> vs;
 #pragma endregion
-
 
 // Effective std
 #pragma region ESTD
@@ -76,46 +76,13 @@ template<typename C, typename Pred>
 constexpr void sort(C& c, Pred p) { sort(ALL(c), p); }
 #pragma endregion
 
-
-// 大文字/小文字変換
-#pragma region TRANSFORM
-void mutal_tr(string &s) {
-  for(int i=s.size(); i--;) {
-    if(islower(s[i])) s[i] = toupper(s[i]);
-    else if (isupper(s[i])) s[i] = tolower(s[i]);
-  }
-}
-void to_upper(string &s) { for(int i=s.size(); i--;) s[i] = toupper(s[i]); }
-void to_lower(string &s) { for(int i=s.size(); i--;) s[i] = tolower(s[i]); }
-#pragma endregion
-
-
-// Union Find
-#pragma region UF
-struct UnionFind {
-  vector<int> data;
-  UnionFind(int size) : data(size, -1) {}
-  bool union_set(int x, int y) {
-    x = root(x); y = root(y);
-    if(x!=y) {
-      if(data[y] < data[x]) swap(x, y);
-      data[x] += data[y]; data[y] = x;
-    }
-    return x != y;
-  }
-  bool find_set(int x, int y) { return root(x) == root(y); }
-  int root(int x) { return data[x] < 0 ? x : data[x] = root(data[x]); }
-  int size(int x) { return -data[root(x)]; }
-};
-#pragma endregion
-
-
 // 定数
 #pragma region CONST_VAL
 #define PI (2*acos(0.0))
 #define EPS (1e-9)
 #define MOD (int)(1e9+7)
 #pragma endregion
+
 
 int main()
 {
