@@ -86,7 +86,7 @@ NeoBundle 'lepture/vim-jinja'
 NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nono/jquery.vim'
 NeoBundle 'othree/html5.vim'
-NeoBundle 'pangloss/vim-javascript'
+NeoBundleLazy 'othree/yajs.vim', {'filetypes': ['html', 'php', 'javascript']}
 
 "------- markup language -------
 NeoBundle 'tpope/vim-markdown'
