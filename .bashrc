@@ -154,3 +154,7 @@ export PATH="$PATH:$HOME/chppl-tool/chppl-tool/bin"
 export FZF_COMPLETION_TRIGGER='~~'
 export PATH="$HOME/.rbenv/bin:$PATH"
 eval "$(rbenv init -)"
+
+if [[ -s ~/.nvm/nvm.sh ]];
+  then source ~/.nvm/nvm.sh
+fi
