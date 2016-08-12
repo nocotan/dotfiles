@@ -193,6 +193,12 @@ let g:rbpt_colorpairs = [
 let g:rbpt_max = 16
 autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 
+
+" PyFlake
+let g:PyFlakeOnWrite = 1
+let g:PyFlakeCheckers = 'pep8,mccabe,pyflakes'
+let g:PyFlakeDefaultComplexity=10
+
 " tabbar
 let g:Tb_MaxSize = 2
 let g:Tb_TabWrap = 1

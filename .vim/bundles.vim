@@ -91,6 +91,11 @@ NeoBundleLazy 'othree/yajs.vim', {'filetypes': ['html', 'php', 'javascript']}
 "------- markup language -------
 NeoBundle 'tpope/vim-markdown'
 
+"------ Python -------
+NeoBundle 'Flake8-vim'
+NeoBundle 'davidhalter/jedi-vim'
+NeoBundle 'hynek/vim-python-pep8-indent'
+
 "------- Ruby --------
 
 "------ C/C++ --------
