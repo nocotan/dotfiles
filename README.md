@@ -15,5 +15,6 @@
   * C/C++ template files
   * Python template files
   * Ruby template files
+  * HTML template files
   * XML template files
   * XMLSchema template files
