@@ -92,7 +92,6 @@ NeoBundleLazy 'othree/yajs.vim', {'filetypes': ['html', 'php', 'javascript']}
 NeoBundle 'tpope/vim-markdown'
 
 "------ Python -------
-NeoBundle 'Flake8-vim'
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'hynek/vim-python-pep8-indent'
 
