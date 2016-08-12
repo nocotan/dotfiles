@@ -160,6 +160,9 @@ autocmd BufNewFile *.cpp 0r $HOME/.dotfiles/.template/template.cpp
 " python template
 autocmd BufNewFile *.py 0r $HOME/.dotfiles/.template/template.py
 
+" HTML template
+autocmd BufNewFile *.html 0r $HOME/.dotfiles/.template/template.html
+
 " XMLSchema template
 autocmd BufNewFile *.xsd 0r $HOME/.dotfiles/.template/template.xsd
 
