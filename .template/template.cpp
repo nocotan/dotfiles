@@ -57,23 +57,23 @@ typedef vector<string> vs;
 // Effective std
 #pragma region ESTD
 template<typename C, typename T>
-constexpr int count(C& c, T t) { return count(ALL(c), t); }
+int count(C& c, T t) { return count(ALL(c), t); }
 template<typename C, typename F>
-constexpr int count_if(C& c, F f) { return count_if(ALL(c), f); }
+int count_if(C& c, F f) { return count_if(ALL(c), f); }
 template<typename C, typename T>
 void erase(C& c, T t) { remove(ALL(c), t), c.end(); }
 template<typename C>
 void remove(vector<C>& c, unsigned int index) { c.erase(c.begin()+index); }
 template<typename C, typename T, typename U>
-constexpr void replace(C& c, T t, U u) { replace(ALL(c), t, u); }
+void replace(C& c, T t, U u) { replace(ALL(c), t, u); }
 template<typename C, typename F, typename U>
-constexpr void replace_if(C& c, F f, U u) { (ALL(c), f, u); }
+void replace_if(C& c, F f, U u) { (ALL(c), f, u); }
 template<typename C>
-constexpr void reverse(C& c) { reverse(ALL(c)); }
+void reverse(C& c) { reverse(ALL(c)); }
 template<typename C>
-constexpr void sort(C& c) { sort(ALL(c)); }
+void sort(C& c) { sort(ALL(c)); }
 template<typename C, typename Pred>
-constexpr void sort(C& c, Pred p) { sort(ALL(c), p); }
+void sort(C& c, Pred p) { sort(ALL(c), p); }
 #pragma endregion
 
 // 定数
