@@ -49,6 +49,7 @@ template<typename C, typename Pred> void sort(C& c, Pred p) { sort(ALL(c), p); }
 #define PI (2*acos(0.0))
 #define EPS (1e-9)
 #define MOD (int)(1e9+7)
+#define INF numeric_limits<int>::infinity()
 #pragma endregion
 
 
