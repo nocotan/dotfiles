@@ -1,29 +1,6 @@
 //#define _GRIBCXX_DEBUG
-#include <algorithm>
-#include <cctype>
-#include <climits>
-#include <cmath>
-#include <complex>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <deque>
-#include <functional>
-#include <iostream>
-#include <iomanip>
-#include <list>
-#include <map>
-#include <memory>
-#include <numeric>
-#include <queue>
-#include <set>
-#include <stack>
-#include <string>
-#include <utility>
-#include <vector>
+#include <bits/stdc++.h>
 using namespace std;
-
 
 // 基本テンプレート
 #pragma region MACRO
@@ -56,24 +33,15 @@ typedef vector<string> vs;
 
 // Effective std
 #pragma region ESTD
-template<typename C, typename T>
-int count(C& c, T t) { return count(ALL(c), t); }
-template<typename C, typename F>
-int count_if(C& c, F f) { return count_if(ALL(c), f); }
-template<typename C, typename T>
-void erase(C& c, T t) { remove(ALL(c), t), c.end(); }
-template<typename C>
-void remove(vector<C>& c, unsigned int index) { c.erase(c.begin()+index); }
-template<typename C, typename T, typename U>
-void replace(C& c, T t, U u) { replace(ALL(c), t, u); }
-template<typename C, typename F, typename U>
-void replace_if(C& c, F f, U u) { (ALL(c), f, u); }
-template<typename C>
-void reverse(C& c) { reverse(ALL(c)); }
-template<typename C>
-void sort(C& c) { sort(ALL(c)); }
-template<typename C, typename Pred>
-void sort(C& c, Pred p) { sort(ALL(c), p); }
+template<typename C, typename T> int count(C& c, T t) { return count(ALL(c), t); }
+template<typename C, typename F> int count_if(C& c, F f) { return count_if(ALL(c), f); }
+template<typename C, typename T> void erase(C& c, T t) { remove(ALL(c), t), c.end(); }
+template<typename C> void remove(vector<C>& c, unsigned int index) { c.erase(c.begin()+index); }
+template<typename C, typename T, typename U> void replace(C& c, T t, U u) { replace(ALL(c), t, u); }
+template<typename C, typename F, typename U> void replace_if(C& c, F f, U u) { (ALL(c), f, u); }
+template<typename C> void reverse(C& c) { reverse(ALL(c)); }
+template<typename C> void sort(C& c) { sort(ALL(c)); }
+template<typename C, typename Pred> void sort(C& c, Pred p) { sort(ALL(c), p); }
 #pragma endregion
 
 // 定数
