@@ -74,9 +74,6 @@ set textwidth=79
 set smarttab
 set expandtab       " expand tab to space
 
-au BufRead,BufNewFile silent *.cn
-set filetype=canon
-
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
@@ -357,6 +354,8 @@ imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
 imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+
+au BufNewFile,BufRead *.tag setlocal ft=javascript
 
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS

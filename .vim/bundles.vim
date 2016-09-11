@@ -87,6 +87,7 @@ NeoBundle 'kchmck/vim-coffee-script'
 NeoBundle 'nono/jquery.vim'
 NeoBundle 'othree/html5.vim'
 NeoBundleLazy 'othree/yajs.vim', {'filetypes': ['html', 'php', 'javascript']}
+NeoBundle 'nicklasos/vim-jsx-riot'
 
 "------- markup language -------
 NeoBundle 'tpope/vim-markdown'
@@ -108,6 +109,9 @@ NeoBundle 'fatih/vim-go'
 "------ Rust ---------
 NeoBundle 'rhysd/rust-doc.vim'
 NeoBundle 'rust-lang/rust.vim'
+
+"------ Elixir -------
+NeoBundle "elixir-lang/vim-elixir"
 
 "------- FPs ------
 NeoBundle 'kien/rainbow_parentheses.vim'
