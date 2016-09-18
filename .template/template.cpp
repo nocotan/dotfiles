@@ -46,10 +46,10 @@ template<typename C, typename Pred> void sort(C& c, Pred p) { sort(ALL(c), p); }
 
 // 定数
 #pragma region CONST_VAL
-#define PI (2*acos(0.0))
-#define EPS (1e-9)
-#define MOD (int)(1e9+7)
-#define INF numeric_limits<int>::infinity()
+constexpr int PI = (2*acos(0.0));
+constexpr int EPS = (1e-9);
+constexpr int MOD = (int)(1e9+7);
+constexpr int INF = 100000000;
 #pragma endregion
 
 
