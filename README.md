@@ -18,3 +18,5 @@
   * HTML template files
   * XML template files
   * XMLSchema template files
+- snippets
+  * C/C++ snippets
