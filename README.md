@@ -22,3 +22,4 @@
   * C/C++ snippets
     * Union Find
     * Euclidean Algorithm
+    * Sieve of Eratosthenes
