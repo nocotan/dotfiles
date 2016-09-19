@@ -20,3 +20,4 @@
   * XMLSchema template files
 - snippets
   * C/C++ snippets
+    * Union Find
