@@ -21,3 +21,4 @@
 - snippets
   * C/C++ snippets
     * Union Find
+    * Euclidean Algorithm
