@@ -1,5 +1,5 @@
-# エラトステネスのふるい
 snippet sieve_of_eratosthenes
+    // エラトステネスのふるい
     vector<int> sieve_of_eratosthenes(int n)
     {
         vector<int> primes(n);
@@ -9,5 +9,7 @@ snippet sieve_of_eratosthenes
             if (primes[i])
                 for (int j=i*i; j<n; j+=i)
                     primes[j] = 0;
+
+        primes.erase(remove(primes.begin(), primes.end(), 0), primes.end());
         return primes;
     }
