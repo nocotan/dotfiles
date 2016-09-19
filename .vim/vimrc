@@ -352,10 +352,14 @@ let g:neocomplcache_min_syntax_length=3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 set completeopt-=preview
 
-imap <C-k> <Plug>(neocomplcache_snippets_force_expand)
-smap <C-k> <Plug>(neocomplcache_snippets_force_expand)
+" Snippets
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
 imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
 smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets,~/.dotfiles/.snippets'
 
 au BufNewFile,BufRead *.tag setlocal ft=javascript
 

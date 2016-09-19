@@ -31,6 +31,8 @@ NeoBundle 'Shougo/neocomplcache'
 NeoBundle 'ervandew/supertab'
 NeoBundle 'mattn/emmet-vim'
 " snippets
+NeoBundle 'Shougo/neosnippet'
+NeoBundle 'Shougo/neosnippet-snippets'
 NeoBundle 'garbas/vim-snipmate'
 NeoBundle 'honza/vim-snippets'
 "------ snipmate dependencies -------
