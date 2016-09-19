@@ -23,3 +23,4 @@
     * Union Find
     * Euclidean Algorithm
     * Sieve of Eratosthenes
+    * Depth-First Search
