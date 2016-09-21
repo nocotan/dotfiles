@@ -319,6 +319,7 @@ let NERDCompactSexyComs=1
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in")| SrcExplToggle |endif
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in")| NERDTreeToggle |endif
+
 " lightline
 let g:lightline = {
             \ 'colorscheme': 'wombat',
@@ -413,6 +414,7 @@ nnoremap <leader>v V`]
 "------------------
 " Useful Functions
 "------------------
+
 " easier navigation between split windows
 nnoremap <c-j> <c-w>j
 nnoremap <c-k> <c-w>k
