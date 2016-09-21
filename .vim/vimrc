@@ -76,6 +76,7 @@ set textwidth=79
 set smarttab
 set expandtab       " expand tab to space
 
+" set file type
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
@@ -84,6 +85,7 @@ autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType canon setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+
 " syntax support
 " JQuery syntax support
 autocmd Syntax javascript set syntax=jquery
@@ -167,6 +169,16 @@ autocmd BufNewFile *.xsd 0r $HOME/.dotfiles/.template/template.xsd
 
 " XML template
 autocmd BufNewFile *.xml 0r $HOME/.dotfiles/.template/template.xml
+
+" Snippets
+imap <C-k> <Plug>(neosnippet_expand_or_jump)
+smap <C-k> <Plug>(neosnippet_expand_or_jump)
+xmap <C-k> <Plug>(neosnippet_expand_target)
+imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
+
+let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets,~/.dotfiles/.snippets'
+
 "-----------------
 " Plugin settings
 "-----------------
@@ -352,14 +364,6 @@ let g:neocomplcache_min_syntax_length=3
 let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
 set completeopt-=preview
 
-" Snippets
-imap <C-k> <Plug>(neosnippet_expand_or_jump)
-smap <C-k> <Plug>(neosnippet_expand_or_jump)
-xmap <C-k> <Plug>(neosnippet_expand_target)
-imap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-smap <C-l> <Plug>(neocomplcache_snippets_force_jump)
-
-let g:neosnippet#snippets_directory='~/.vim/bundle/neosnippet-snippets,~/.dotfiles/.snippets'
 
 au BufNewFile,BufRead *.tag setlocal ft=javascript
 
