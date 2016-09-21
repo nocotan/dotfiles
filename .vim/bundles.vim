@@ -116,6 +116,9 @@ NeoBundle 'rust-lang/rust.vim'
 "------ Elixir -------
 NeoBundle "elixir-lang/vim-elixir"
 
+"----- Arduino -------
+NeoBundle "sudar/vim-arduino-syntax"
+
 "------- FPs ------
 NeoBundle 'kien/rainbow_parentheses.vim'
 
