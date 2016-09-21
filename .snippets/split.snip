@@ -1,0 +1,12 @@
+snippet split
+    // 文字列分割
+    vector<long long> split(const string &input, char delimiter) {
+        istringstream stream(input);
+        string field;
+        vector<long long> result;
+
+        while (getline(stream, field, delimiter))
+            result.push_back(stoll(field));
+
+        return result;
+    }
