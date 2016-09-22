@@ -1,0 +1,18 @@
+snippet prime_factor_decomposition
+    // 素因数分解
+    pair< vector<long long> > prime_factor(long long n) {
+        vector<long long> p, e;
+        long long m = n;
+        for (long long i=2; i*i<=n; ++i) {
+            if (m%i!=0) continue;
+            int c = 0;
+            while(m%i==0) c++, m /= i;
+            p.push_back(i);
+            e.push_back(c);
+        }
+        if (m > 1) {
+            p.push_back(m);
+            e.push_back(1);
+        }
+        return make_pair(p, e);
+    }
