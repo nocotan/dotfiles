@@ -64,8 +64,6 @@ set nobackup
 " don't make swap file
 set noswapfile
 
-set breakindent
-
 " Default Indentation
 set autoindent
 set smartindent     " indent when
