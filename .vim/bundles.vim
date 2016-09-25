@@ -75,6 +75,7 @@ NeoBundleLazy 'wesleyche/SrcExpl', {
 " Other Utils
 "-------------
 NeoBundle 'nvie/vim-togglemouse'
+NeoBundle 'junegunn/vim-easy-align'
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
