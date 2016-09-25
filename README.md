@@ -24,3 +24,4 @@
     * Euclidean Algorithm
     * Sieve of Eratosthenes
     * Depth-First Search
+- xmonad
