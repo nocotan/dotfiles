@@ -95,6 +95,9 @@ NeoBundle 'slim-template/vim-slim'
 "------- markup language -------
 NeoBundle 'tpope/vim-markdown'
 
+"------------ toml -------------
+NeoBundle "cespare/vim-toml"
+
 "------ Python -------
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'hynek/vim-python-pep8-indent'
