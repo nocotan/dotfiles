@@ -96,6 +96,9 @@ NeoBundle 'slim-template/vim-slim'
 "------- markup language -------
 NeoBundle 'tpope/vim-markdown'
 
+"------------- LaTex -----------
+NeoBundle 'lervag/vim-latex'
+
 "------------ toml -------------
 NeoBundle "cespare/vim-toml"
 
