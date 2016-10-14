@@ -1,0 +1,4 @@
+set nobeep
+set defsearch=google
+set hlsearch
+inoremap jj <Esc>
