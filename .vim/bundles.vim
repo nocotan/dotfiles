@@ -132,6 +132,7 @@ NeoBundle 'kien/rainbow_parentheses.vim'
 "--------------
 " Color Schemes
 "--------------
+NeoBundle 'jacoborus/tender.vim'
 NeoBundle 'Lokaltog/vim-distinguished'
 NeoBundle 'altercation/vim-colors-solarized'
 NeoBundle 'chriskempson/vim-tomorrow-theme'
