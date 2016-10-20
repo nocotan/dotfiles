@@ -1,16 +1,44 @@
 source ~/.dotfiles/.vim/bundles.vim
 
-" encoding dectection
-set fileencodings=utf-8,gb2312,gb18030,gbk,ucs-bom,cp936,latin1
-
 " enable filetype dectection and ft specific plugin/indent
 filetype plugin indent on
 
 " enable syntax hightlight and completion
 syntax on
 
+" enable filetype dectection and ft specific plugin/indent
+filetype plugin indent on
+
+" enable syntax hightlight and completion
+syntax on
+" ------------------
+"  Encoding Setting
+" ------------------
+set encoding=utf-8
+set termencoding=utf-8
+set fileencoding=utf-8
+set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
+
+func! ViewUTF8()
+    set encoding=utf-8
+    set termencoding=big5
+endfunc
+
+func! UTF8()
+    set encoding=utf-8
+    set termencoding=big5
+    set fileencoding=utf-8
+    set fileencodings=ucs-bom,big5,utf-8,latin1
+endfunc
+
+func! Big5
+    set encoding=big5
+    set fileencoding=big5
+endfunc
+
+
 "--------
-" Vim UI
+" General
 "--------
 " color scheme
 set background=dark
@@ -31,48 +59,84 @@ set smartcase
 
 " editor settings
 set history=1000
+
 " disable folding
 set nofoldenable
+
 " prompt when existing from an unsaved fileet nocompatible
 set confirm
+
 " delete anything on backspace
 set backspace=indent,eol,start
+
 " Explicity tell vim that the terminal has 256 colors
 set t_Co=256
+
 " use mouse in all modes
 set mouse=a
+
 " always report number of lines changed
 set report=0
+
 " don't wrap lines
 set nowrap
+
 " 5 lines above/below cursor when scrolling
 set scrolloff=5
+
 " show line number
 set number
+
 " show matching bracket
 set showmatch
+
 " show typed command in status bar
 set showcmd
+
 " show notitle
 set notitle
+
 " use 2 lines for the status bar
 set laststatus=2
+
 " show matching bracket for 0.2 seconds
 set matchtime=2
+
 " don't make backup file
 set nobackup
+
+set nowb
+
 " don't make swap file
 set noswapfile
 
 " Default Indentation
 set autoindent
-set smartindent     " indent when
-set tabstop=4       " tab width
-set softtabstop=4  " backspace
-set shiftwidth=4    " indent width
+
+" indent when
+set smartindent
+
+" tab width
+set tabstop=4
+
+" backspace
+set softtabstop=4
+
+" indent width
+set shiftwidth=4
+
 set textwidth=79
+
 set smarttab
-set expandtab       " expand tab to space
+
+" expand tab to space
+set expandtab
+
+" Fast saving
+nmap <Leader>w :w!<cr>
+
+" :W sudo saves the file
+command W w !sudo tee % > /dev/null
 
 " set file type
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
@@ -84,13 +148,37 @@ autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 soft
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType canon setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 
+" Delete trailin white space on save for python and Coffee
+func! DeleteTrailingWS()
+    exe "normal mz"
+    %s/\s\+$//ge
+    exe "normal `z"
+endfunc
+autocmd BufWrite *.py :call DeleteTrailingWS()
+autocmd BufWrite *.coffee :call DeleteTrailingWS()
+
+" ,g generators the header guard
+func! IncludeGuard()
+    let basename = substitute(bufname(""), '.*/', '', '')
+    let guard = '_' . substitute(toupper(basename), '\.', '_', "H")
+    call append(0, "#ifndef " . guard)
+    call append(1, "#define " . guard)
+    call append( line("$"), "#endif // for #ifndef " . guard)
+endfunc
+map <leader>g :call IncludeGuard()<CR>
+
 " syntax support
 " JQuery syntax support
 autocmd Syntax javascript set syntax=jquery
+
 " js
 let g:html_indent_inctags = "html,body,head,tbody"
 let g:html_indent_script1 = "inc"
 let g:html_indent_style1 = "inc"
+
+" make CSS omnicompletion work for SASS and SCSS
+autocmd BufNewFile,BufRead *.scss             set ft=scss.css
+autocmd BufNewFile,BufRead *.sass set ft=sass.css
 
 " keybindings
 function! IsEndSemicolon()
@@ -102,6 +190,7 @@ function! IsEndSemicolon()
   endif
 endfunction
 
+map 0 ^
 inoremap <expr>;; IsEndSemicolon() ? "<C-O>$;<CR>" : "<C-O>$<CR>"
 inoremap jj <Esc>
 noremap j gj
@@ -230,6 +319,7 @@ let g:tagbar_width=30
 let g:tagbar_autofocus = 1
 let g:tagbar_sort = 0
 let g:tagbar_compact = 1
+
 " tag for coffee
 if executable('coffeetags')
   let g:tagbar_type_coffee = {
@@ -414,6 +504,7 @@ nmap  <D-/> :
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]
 
+
 "------------------
 " Useful Functions
 "------------------
@@ -456,9 +547,13 @@ nnoremap ; :
 
 " for macvim
 if has("gui_running")
+    set guioptions-=T
+    set guioptions-=e
+    set guifont=Monaco:h13
+    set guitablabel=%M\ %t
+    set t_Co=256
     set go=aAce  " remove toolbar
     set transparency=30
-    set guifont=Monaco:h13
     set showtabline=2
     set columns=140
     set lines=40
