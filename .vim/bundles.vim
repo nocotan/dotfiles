@@ -119,6 +119,7 @@ NeoBundle 'fatih/vim-go'
 "------ Rust ---------
 NeoBundle 'rhysd/rust-doc.vim'
 NeoBundle 'rust-lang/rust.vim'
+NeoBundle 'racer-rust/vim-racer'
 
 "------ Elixir -------
 NeoBundle "elixir-lang/vim-elixir"
@@ -148,4 +149,4 @@ NeoBundle 'w0ng/vim-hybrid'
 call neobundle#end()
 NeoBundleCheck
 
-filetype plugin indent on     " required!
+filetype plugin indent on
