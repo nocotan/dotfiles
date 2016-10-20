@@ -324,7 +324,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in")| NERDTreeToggle |endif
 
 " lightline
 let g:lightline = {
-            \ 'colorscheme': 'wombat',
+            \ 'colorscheme': 'tender',
             \ 'active' : {
             \    'left':[
             \        ['mode', 'paste'],
@@ -333,7 +333,8 @@ let g:lightline = {
             \ },
             \ 'component_function': {
             \   'anzu': 'anzu#search_status'
-            \ }
+            \ },
+            \ 'separator': { 'left': '◣'},
             \ }
 
 " ZenCoding
