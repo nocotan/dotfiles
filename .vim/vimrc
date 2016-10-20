@@ -422,7 +422,6 @@ let g:lightline = {
             \ 'component_function': {
             \   'anzu': 'anzu#search_status'
             \ },
-            \ 'separator': { 'left': '◣'},
             \ }
 
 " ZenCoding

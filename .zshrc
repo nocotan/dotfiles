@@ -376,8 +376,3 @@ export PATH="$PATH:$HOME/chppl-tool/chppl-tool/bin"
 export EDITOR='vim'
 export VISUAL='vim'
 export PAGER='less'
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
-if [[ -s ~/.nvm/nvm.sh ]];
-  then source ~/.nvm/nvm.sh
-fi
