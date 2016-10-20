@@ -25,7 +25,7 @@ set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 "--------
 " color scheme
 set background=dark
-:colorscheme tender
+:colorscheme lucius
 
 " highlight current line
 au WinLeave * set nocursorline nocursorcolumn
@@ -397,7 +397,7 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in")| NERDTreeToggle |endif
 
 " lightline
 let g:lightline = {
-            \ 'colorscheme': 'tender',
+            \ 'colorscheme': 'wombat',
             \ 'active' : {
             \    'left':[
             \        ['mode', 'paste'],
