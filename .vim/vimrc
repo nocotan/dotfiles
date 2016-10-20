@@ -170,16 +170,26 @@ autocmd BufNewFile,BufRead *.sass set ft=sass.css
 
 " keybindings
 function! IsEndSemicolon()
-  let c = getline(".")[col("$")-2]
-  if c != ';'
-    return 1
-  else
-    return 0
-  endif
+    let c = getline(".")[col("$")-2]
+    if c != ';'
+        return 1
+    else
+        return 0
+    endif
+endfunction
+
+function! IsEndComma()
+    let c = getline(".")[col("$")-2]
+    if c != ','
+        return 1
+    else
+        return 0
+    endif
 endfunction
 
 map 0 ^
 inoremap <expr>;; IsEndSemicolon() ? "<C-O>$;<CR>" : "<C-O>$<CR>"
+inoremap <expr>,, IsEndComma() ? "<C-O>$,<CR>" : "<C-O>$<CR>"
 inoremap jj <Esc>
 noremap j gj
 noremap k gk
