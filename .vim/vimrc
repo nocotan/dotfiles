@@ -395,6 +395,18 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('c', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('cpp', 'Magenta', 'none', '#ff00ff', '#151515')
 
+let g:NERDTreeIndicatorMapCustom = {
+    \ "Modified"  : "✹",
+    \ "Staged"    : "✚",
+    \ "Untracked" : "✭",
+    \ "Renamed"   : "➜",
+    \ "Unmerged"  : "═",
+    \ "Deleted"   : "✖",
+    \ "Dirty"     : "✗",
+    \ "Clean"     : "✔︎",
+    \ "Unknown"   : "?"
+    \ }
+
 
 " nerdcommenter
 let NERDSpaceDelims=1
@@ -484,6 +496,10 @@ let g:SuperTabRetainCompletionType=2
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
 let g:ctrlp_custom_ignore = '\.git$\|\.hg$\|\.svn$'
+
+" indentline
+let g:indentLine_concealcursor = 'inc'
+let g:indentLine_conceallevel = 2
 
 " Keybindings for plugin toggle
 nnoremap <F2> :set invpaste paste?<CR>

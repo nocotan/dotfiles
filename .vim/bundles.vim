@@ -12,15 +12,15 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "------------------
 " vimproc
 "------------------
-NeoBundle 'Shougo/vimproc.vim', {
-            \ 'build': {
-            \     'windows': 'tools\\update-dll-mingw',
-            \     'cygwin': 'make -f make_cygwin.mak',
-            \     'mac': 'make -f make_mac.mak',
-            \     'linux': 'make',
-            \     'unix': 'gmake',
-            \     },
-            \ }
+"NeoBundle 'Shougo/vimproc.vim', {
+"            \ 'build': {
+"            \     'windows': 'tools\\update-dll-mingw',
+"            \     'cygwin': 'make -f make_cygwin.mak',
+"            \     'mac': 'make -f make_mac.mak',
+"            \     'linux': 'make',
+"            \     'unix': 'gmake',
+"            \     },
+"            \ }
 
 
 "------------------
@@ -49,7 +49,7 @@ NeoBundle 'edsono/vim-matchit'
 " Fast editing
 "--------------
 NeoBundle 'godlygeek/tabular'
-NeoBundle 'nathanaelkane/vim-indent-guides'
+NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'tpope/vim-surround'
@@ -57,6 +57,7 @@ NeoBundle 'tpope/vim-surround'
 "--------------
 " IDE features
 "--------------
+NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'Lokaltog/vim-powerline'
 NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
@@ -70,12 +71,14 @@ NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
 NeoBundleLazy 'wesleyche/SrcExpl', {
             \ "autoload" : { "commands": ["SrcExplToggle"]}}
+NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 
 "-------------
 " Other Utils
 "-------------
 NeoBundle 'nvie/vim-togglemouse'
 NeoBundle 'junegunn/vim-easy-align'
+NeoBundle 'rhysd/accelerated-jk'
 "----------------------------------------
 " Syntax/Indent for language enhancement
 "----------------------------------------
@@ -119,7 +122,6 @@ NeoBundle 'fatih/vim-go'
 "------ Rust ---------
 NeoBundle 'rhysd/rust-doc.vim'
 NeoBundle 'rust-lang/rust.vim'
-NeoBundle 'racer-rust/vim-racer'
 
 "------ Elixir -------
 NeoBundle "elixir-lang/vim-elixir"
