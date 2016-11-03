@@ -476,6 +476,7 @@ endif
 let g:neocomplcache_omni_patterns.erlang='[a-zA-Z]\|:'
 let g:neocomplcache_omni_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 let g:neocomplcache_omni_patterns.cpp='[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplcache_omni_patterns.hpp='[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 let g:neocomplcache_clang_use_library=1
 let g:neocomplcache_clang_library_path='/usr/local/lib'
