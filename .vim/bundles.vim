@@ -28,7 +28,7 @@ NeoBundleFetch 'Shougo/neobundle.vim'
 "------------------
 NeoBundle 'Raimondi/delimitMate'
 NeoBundle 'Shougo/neocomplcache'
-NeoBundle 'ervandew/supertab'
+"NeoBundle 'ervandew/supertab'
 NeoBundle 'mattn/emmet-vim'
 " snippets
 NeoBundle 'Shougo/neosnippet'
@@ -48,7 +48,7 @@ NeoBundle 'edsono/vim-matchit'
 "--------------
 " Fast editing
 "--------------
-NeoBundle 'godlygeek/tabular'
+"NeoBundle 'godlygeek/tabular'
 NeoBundle 'Yggdroot/indentLine'
 NeoBundle 'scrooloose/nerdcommenter'
 NeoBundle 'sjl/gundo.vim'
@@ -69,8 +69,8 @@ NeoBundle 'scrooloose/nerdtree'
 NeoBundle 'scrooloose/syntastic'
 NeoBundle 'thinca/vim-quickrun'
 NeoBundle 'tpope/vim-fugitive'
-NeoBundleLazy 'wesleyche/SrcExpl', {
-            \ "autoload" : { "commands": ["SrcExplToggle"]}}
+"NeoBundleLazy 'wesleyche/SrcExpl', {
+"            \ 'autoload' : { 'commands': ['SrcExplToggle']}}
 NeoBundle 'Xuyuanp/nerdtree-git-plugin'
 
 "-------------
@@ -136,17 +136,17 @@ NeoBundle 'kien/rainbow_parentheses.vim'
 " Color Schemes
 "--------------
 NeoBundle 'jonathanfilip/vim-lucius'
-NeoBundle 'justb3a/vim-smarties'
-NeoBundle 'nocotan/ncer.vim'
-NeoBundle 'jacoborus/tender.vim'
-NeoBundle 'Lokaltog/vim-distinguished'
-NeoBundle 'altercation/vim-colors-solarized'
-NeoBundle 'chriskempson/vim-tomorrow-theme'
-NeoBundle 'fisadev/fisa-vim-colorscheme'
-NeoBundle 'rickharris/vim-blackboard'
-NeoBundle 'rickharris/vim-monokai'
-NeoBundle 'tpope/vim-vividchalk'
-NeoBundle 'w0ng/vim-hybrid'
+"NeoBundle 'justb3a/vim-smarties'
+"NeoBundle 'nocotan/ncer.vim'
+"NeoBundle 'jacoborus/tender.vim'
+"NeoBundle 'Lokaltog/vim-distinguished'
+"NeoBundle 'altercation/vim-colors-solarized'
+"NeoBundle 'chriskempson/vim-tomorrow-theme'
+"NeoBundle 'fisadev/fisa-vim-colorscheme'
+"NeoBundle 'rickharris/vim-blackboard'
+"NeoBundle 'rickharris/vim-monokai'
+"NeoBundle 'tpope/vim-vividchalk'
+"NeoBundle 'w0ng/vim-hybrid'
 
 call neobundle#end()
 NeoBundleCheck

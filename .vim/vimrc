@@ -343,23 +343,23 @@ nn <silent> <leader>t :TagbarToggle<CR>
 
 
 " SrcExpl
-let g:SrcExpl_refreshTime=1000
-let g:SrcExpl_isUpdateTags=0
-let g:SrcExpl_updateTagsCmd='ctags --sort=foldcase %'
-function! g:SrcExpl_UpdateAllTags()
-    let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase -R .'
-    call g:SrcExpl_UpdateTags()
-    let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase %'
-endfunction
+"let g:SrcExpl_refreshTime=1000
+"let g:SrcExpl_isUpdateTags=0
+"let g:SrcExpl_updateTagsCmd='ctags --sort=foldcase %'
+"function! g:SrcExpl_UpdateAllTags()
+"    let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase -R .'
+"    call g:SrcExpl_UpdateTags()
+"    let g:SrcExpl_updateTagsCmd = 'ctags --sort=foldcase %'
+"endfunction
 
-let g:SrcExpl_winHeight=10
-nn [srce] <Nop>
-nm <Leader>E [srce]
-nn <silent> [srce]<CR> :SrcExplToggle<CR>
-nn <silent> [srce]u :call g:SrcExpl_UpdateTags()<CR>
-nn <silent> [srce]a :call g:SrcExpl_UpdateAllTags()<CR>
-nn <silent> [srce]n :call g:SrcExpl_NextDef()<CR>
-nn <silent> [srce]p :call g:SrcExpl_PrevDef()<CR>
+"let g:SrcExpl_winHeight=10
+"nn [srce] <Nop>
+"nm <Leader>E [srce]
+"nn <silent> [srce]<CR> :SrcExplToggle<CR>
+"nn <silent> [srce]u :call g:SrcExpl_UpdateTags()<CR>
+"nn <silent> [srce]a :call g:SrcExpl_UpdateAllTags()<CR>
+"nn <silent> [srce]n :call g:SrcExpl_NextDef()<CR>
+"nn <silent> [srce]p :call g:SrcExpl_PrevDef()<CR>
 
 
 " NERDTree
@@ -414,7 +414,7 @@ let NERDCompactSexyComs=1
 
 
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in")| SrcExplToggle |endif
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in")| SrcExplToggle |endif
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in")| NERDTreeToggle |endif
 
 " lightline
@@ -490,9 +490,9 @@ let c_no_curly_error=1
 let g:ycm_show_diagnostics_ui=0
 
 " SuperTab
-let g:SuperTabDefultCompletionType='context'
-let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
-let g:SuperTabRetainCompletionType=2
+"let g:SuperTabDefultCompletionType='context'
+"let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
+"let g:SuperTabRetainCompletionType=2
 
 " ctrlp
 set wildignore+=*/tmp/*,*.so,*.o,*.a,*.obj,*.swp,*.zip,*.pyc,*.pyo,*.class,.DS_Store  " MacOSX/Linux
