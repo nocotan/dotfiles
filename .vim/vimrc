@@ -540,10 +540,10 @@ nmap <silent> <leader>ev :e $MYVIMRC<CR>
 nmap <silent> <leader>sv :so $MYVIMRC<CR>
 
 " sublime key bindings
-nmap <D-]> >>
-nmap <D-[> <<
-vmap <D-[> <gv
-vmap <D-]> >gv
+"nmap <D-]> >>
+"nmap <D-[> <<
+"vmap <D-[> <gv
+"vmap <D-]> >gv
 
 " eggcache vim
 nnoremap ; :
