@@ -43,7 +43,6 @@ NeoBundle 'tomtom/tlib_vim'
 " Fast navigation
 "-----------------
 NeoBundle 'Lokaltog/vim-easymotion'
-NeoBundle 'edsono/vim-matchit'
 
 "--------------
 " Fast editing
