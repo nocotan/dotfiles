@@ -58,7 +58,7 @@ NeoBundle 'tpope/vim-surround'
 "--------------
 NeoBundle 'airblade/vim-gitgutter'
 NeoBundle 'Lokaltog/vim-powerline'
-NeoBundle 'Shougo/vimshell.vim'
+" NeoBundle 'Shougo/vimshell.vim'
 NeoBundle 'bronson/vim-trailing-whitespace'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'kien/ctrlp.vim'
