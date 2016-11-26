@@ -158,3 +158,5 @@ eval "$(rbenv init -)"
 if [[ -s ~/.nvm/nvm.sh ]];
   then source ~/.nvm/nvm.sh
 fi
+
+XDG_CONFIG_HOME=~/.config
