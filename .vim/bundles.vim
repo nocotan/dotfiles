@@ -115,6 +115,9 @@ NeoBundle 'octol/vim-cpp-enhanced-highlight'
 NeoBundle 'vim-jp/cpp-vim'
 NeoBundle 'vim-scripts/gtags.vim'
 
+"------- Scala -------
+NeoBundle 'derekwyatt/vim-scala'
+
 "------- Go ----------
 NeoBundle 'fatih/vim-go'
 
