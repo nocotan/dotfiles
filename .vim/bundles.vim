@@ -104,6 +104,9 @@ NeoBundle 'lervag/vim-latex'
 "------------ toml -------------
 NeoBundle "cespare/vim-toml"
 
+" ----------- Dart -------------
+NeoBundle "dart-lang/dart-vim-plugin"
+
 "------ Python -------
 NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'hynek/vim-python-pep8-indent'
