@@ -104,6 +104,9 @@ NeoBundle 'lervag/vim-latex'
 "------------ toml -------------
 NeoBundle "cespare/vim-toml"
 
+" -------- Typescript ---------
+NeoBundle "leafgarland/typescript-vim"
+
 " ----------- Dart -------------
 NeoBundle "dart-lang/dart-vim-plugin"
 
