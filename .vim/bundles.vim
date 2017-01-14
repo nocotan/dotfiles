@@ -122,7 +122,7 @@ NeoBundle 'vim-scripts/gtags.vim'
 NeoBundle 'derekwyatt/vim-scala'
 
 "------- Go ----------
-NeoBundle 'fatih/vim-go'
+NeoBundleLazy 'fatih/vim-go', { 'autoload': { 'filetypes': 'go' } }
 
 "------ Rust ---------
 NeoBundle 'rhysd/rust-doc.vim'

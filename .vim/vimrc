@@ -489,6 +489,11 @@ let g:cpp_experimental_template_highlight=1
 let c_no_curly_error=1
 let g:ycm_show_diagnostics_ui=0
 
+" vim-go
+let g:go_highlight_function = 1
+let g:go_highlight_methods = 1
+let g:go_highlight_structs = 1
+
 " SuperTab
 "let g:SuperTabDefultCompletionType='context'
 "let g:SuperTabDefaultCompletionType = '<C-X><C-U>'
