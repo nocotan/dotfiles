@@ -24,4 +24,5 @@
     * Euclidean Algorithm
     * Sieve of Eratosthenes
     * Depth-First Search
+  * Go snippets
 - xmonad
