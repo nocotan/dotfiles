@@ -120,7 +120,7 @@ alias gitlogf='git log --pretty=format:"%h - %an, %ar : %s" --graph'
 alias gita='git add . -A'
 alias gitc='git commit -m $1'
 alias gitp='git push origin master'
-alias gitacp='gita; gitc -m $1; gitp'
+alias gitacp='gita; gitc $1; gitp'
 
 
 # Alias definitions.
