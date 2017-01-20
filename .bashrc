@@ -118,9 +118,15 @@ alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo
 # git
 alias gitlogf='git log --pretty=format:"%h - %an, %ar : %s" --graph'
 alias gita='git add . -A'
-alias gitc='git commit -m $1'
 alias gitp='git push origin master'
-alias gitacp='gita; gitc $1; gitp'
+
+function gitc() {
+  command git commit -m $1
+}
+
+function gitacp() {
+  command git add . -A; git commit -m $1; git push origin master
+}
 
 
 # Alias definitions.
