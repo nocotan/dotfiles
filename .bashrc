@@ -107,11 +107,21 @@ alias la='ls -A'
 alias l='ls -CF'
 alias vi='/usr/bin/vim'
 alias g++='g++ -std=c++11'
-alias cbp='xsel --clipboard --input'
-
+if type "xsel" > /dev/null 2>&1
+then
+    alias cbp='xsel --clipboard --input'
+fi
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+
+# git
+alias gitlogf='git log --pretty=format:"%h - %an, %ar : %s" --graph'
+alias gita='git add . -A'
+alias gitc='git commit -m $1'
+alias gitp='git push origin master'
+alias gitacp='gita; gitc -m $1; gitp'
+
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
