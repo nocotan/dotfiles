@@ -111,7 +111,6 @@ NeoBundle "leafgarland/typescript-vim"
 NeoBundle "dart-lang/dart-vim-plugin"
 
 "------ Python -------
-NeoBundle 'davidhalter/jedi-vim'
 NeoBundle 'hynek/vim-python-pep8-indent'
 
 "------- Ruby --------

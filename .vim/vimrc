@@ -115,6 +115,8 @@ set smarttab
 " expand tab to space
 set expandtab
 
+set shortmess+=c
+
 " Fast saving
 nmap <Leader>w :w!<cr>
 
