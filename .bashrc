@@ -124,10 +124,6 @@ function gitc() {
   command git commit -m $1
 }
 
-function gitacp() {
-  command git add . -A; git commit -m $1; git push origin master
-}
-
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
