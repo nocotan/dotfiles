@@ -64,6 +64,8 @@ set report=0
 " don't wrap lines
 set nowrap
 
+set display=lastline
+
 " 5 lines above/below cursor when scrolling
 set scrolloff=5
 
@@ -119,6 +121,8 @@ set expandtab
 set scrollbind
 
 set shortmess+=c
+
+set pumheight=10
 
 set formatoptions=Mm
 
@@ -570,6 +574,8 @@ vmap # <c-V>0I#<esc>
 vmap C :s/^#//<cr>
 vmap // <C-V>0I//<Esc>
 vmap c :s/^////<CR>:noh<cr>K
+
+nnoremap Y y$
 
 " eggcache vim
 nnoremap ; :
