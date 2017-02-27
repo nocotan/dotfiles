@@ -115,7 +115,14 @@ set smarttab
 " expand tab to space
 set expandtab
 
+" scroll in window as other windows scroll
+set scrollbind
+
 set shortmess+=c
+
+set formatoptions=Mm
+
+set clipboard=unnamed,autoselect
 
 " Fast saving
 nmap <Leader>w :w!<cr>
@@ -190,6 +197,13 @@ inoremap <expr>,, IsEndComma() ? "<C-O>$,<CR>" : "<C-O>$<CR>"
 inoremap jj <Esc>
 noremap j gj
 noremap k gk
+
+nmap n nzz
+nmap N Nzz
+nmap * *zz
+nmap # #zz
+nmap g* g*zz
+nmap g# g#zz
 
 " close and indent
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
@@ -551,6 +565,11 @@ nmap <silent> <leader>sv :so $MYVIMRC<CR>
 "nmap <D-[> <<
 "vmap <D-[> <gv
 "vmap <D-]> >gv
+
+vmap # <c-V>0I#<esc>
+vmap C :s/^#//<cr>
+vmap // <C-V>0I//<Esc>
+vmap c :s/^////<CR>:noh<cr>K
 
 " eggcache vim
 nnoremap ; :
