@@ -133,6 +133,9 @@ NeoBundle 'rust-lang/rust.vim'
 "------ Elixir -------
 NeoBundle "elixir-lang/vim-elixir"
 
+"------- OCaml -------
+NeoBundle 'cohama/the-ocamlspot.vim'
+
 "----- Arduino -------
 NeoBundle "sudar/vim-arduino-syntax"
 
