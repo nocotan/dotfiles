@@ -118,7 +118,7 @@ set smarttab
 set expandtab
 
 " scroll in window as other windows scroll
-set scrollbind
+" set scrollbind
 
 set shortmess+=c
 
@@ -205,10 +205,10 @@ noremap k gk
 
 nmap n nzz
 nmap N Nzz
-nmap * *zz
-nmap # #zz
-nmap g* g*zz
-nmap g# g#zz
+" nmap * *zz
+" nmap # #zz
+" nmap g* g*zz
+" nmap g# g#zz
 
 " close and indent
 inoremap {<Enter> {}<Left><CR><ESC><S-o>
