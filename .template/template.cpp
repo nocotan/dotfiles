@@ -53,8 +53,10 @@ constexpr int MOD = (int)(1e9+7);
 constexpr int INF = 100000000;
 #pragma endregion
 
+#define int long long
 
-int main()
+
+signed main()
 {
     return 0;
 }
