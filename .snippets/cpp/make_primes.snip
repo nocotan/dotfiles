@@ -1,0 +1,8 @@
+snippet make_primes
+    // 素数表の生成
+    void make_primes(std::vector<int>& v, int n) {
+        v.assign(n, 0);
+        std::iota(v.begin(), v.end(), 2);
+        for(auto d=v.begin(); (*d)*(*d)<=v.back(); ++d)
+            v.erase(remove_if(d+1, v.end(), [&](int x){ return x%*d==0; }), v.end());
+    }
