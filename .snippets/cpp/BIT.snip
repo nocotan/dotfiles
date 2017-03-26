@@ -1,0 +1,32 @@
+snippet BIT
+    // Binary Indexed Tree
+    template <typename T>
+    class BIT {
+        private:
+            unsigned size_;
+            std::vector<T> v;
+
+            T sum(unsigned r) {
+                T ret = 0;
+                while (r > 0) {
+                    ret += v[r];
+                    r -= r & (-r);
+                }
+                return ret;
+            }
+        public:
+            BIT() { }
+            BIT(unsigned n) {
+                for (size_=1; size_<n;) size_ <<= 1;
+                v.resize(size_+1, 0);
+            }
+            inline void add(unsigned i, T x) {
+                ++i;
+                while (i <= size_) {
+                    v[i] += x;
+                    i += i & -i;
+                }
+            }
+            inline T sum(unsigned l, unsigned r) { return sum(r) - sum(l); }
+            bool operator[](unsigned x) { return sum(x, x+1); }
+    };
