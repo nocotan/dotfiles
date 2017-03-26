@@ -1,0 +1,47 @@
+snippet RMQ
+    // Range Minimum Query
+    template<typename T>
+    class RMQ {
+        private:
+			unsigned size_;
+			std::vector<T> dat;
+
+			T query(unsigned a, unsigned b, unsigned k, unsigned l, unsigned r) {
+				if (r <= a || b <= l) return std::numeric_limits<T>::max();
+				if (a <= l && r <= b) return dat[k];
+				T lc = query(a, b, (k << 1), l, (l + r) >> 1);
+				T rc = query(a, b, (k << 1) + 1, (l + r) >> 1, r);
+				return std::min(lc, rc);
+			}
+
+		public:
+			RMQ() : size_(0), dat(std::vector<T>()) { }
+			RMQ(int n) {
+				for (size_=1; size_<n;) size_ <<= 1;
+				dat.resize(size_ << 1, std::numeric_limits<T>::max());
+			}
+
+			template<typename U>
+				RMQ(U begin, U end) {
+					unsigned n = (end - begin);
+					for (size=1; size<n;) size <<= 1;
+					dat.resize(size<<1, std::numeric_limits<T>::max());
+					for (unsigned i=0; i<n; ++i) dat[i+size] = *(begin+i);
+					for (unsigned i=size-1; i>0; --i) dat[i] = std::min(dat[i<<1], dat[(i<<1)+1]);
+				}
+
+			unsigned size() { return size_; }
+
+			void update(unsigned i, T x) {
+				i += size_;
+				dat[i] = x;
+				while (i > 1) {
+					i >>= 1;
+					dat[i] = std::min(dat[i << 1], dat[(i << 1) + 1]);
+				}
+			}
+
+			T query(unsigned l, unsigned r) {
+				return query(l, r, 1, 0, size_);
+			}
+	};
