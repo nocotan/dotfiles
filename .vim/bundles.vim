@@ -138,7 +138,6 @@ NeoBundle 'cohama/the-ocamlspot.vim'
 
 "------ Haskell ------
 NeoBundle 'dag/vim2hs'
-NeoBundle 'eagletmt/ghcmod-vim'
 NeoBundle 'kana/vim-filetype-haskell'
 NeoBundle 'ujihisa/neco-ghc'
 NeoBundle 'ujihisa/ref-hoogle'
