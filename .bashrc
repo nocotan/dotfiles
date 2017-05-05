@@ -105,6 +105,10 @@ alias la='ls -A'
 alias l='ls -CF'
 alias vi='/usr/bin/vim'
 alias mv='mv -i'
+alias rm='rm -i'
+alias sort='LC_ALL=C sort'
+alias uniq='LC_ALL=C uniq'
+alias sed='LC_ALL=C sed'
 alias g++='g++ -std=c++11'
 if type "xsel" > /dev/null 2>&1
 then
