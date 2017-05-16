@@ -5,12 +5,8 @@ filetype plugin indent on
 
 " enable syntax hightlight and completion
 syntax on
+set synmaxcol=200
 
-" enable filetype dectection and ft specific plugin/indent
-filetype plugin indent on
-
-" enable syntax hightlight and completion
-syntax on
 " ------------------
 "  Encoding Setting
 " ------------------
