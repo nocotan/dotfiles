@@ -254,7 +254,7 @@ map <silent> [Tag]n :tabnext<CR>
 map <silent> [Tag]p :tabprevious<CR>
 
 " C++ template
-autocmd BufNewFile *.cpp 0r $HOME/.dotfiles/.template/template.cpp
+autocmd BufNewFile *.cpp 0r $HOME/.dotfiles/.template/template.cc
 
 " python template
 autocmd BufNewFile *.py 0r $HOME/.dotfiles/.template/template.py

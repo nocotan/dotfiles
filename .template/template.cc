@@ -4,7 +4,6 @@ using namespace std;
 
 #define int long long
 
-signed main()
-{
+auto main() -> signed {
     return 0;
 }
