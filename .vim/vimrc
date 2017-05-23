@@ -430,6 +430,8 @@ let g:NERDTreeIndicatorMapCustom = {
 let NERDSpaceDelims=1
 let NERDCompactSexyComs=1
 
+au BufRead,BufNewFile *.md set filetype=markdown
+let g:previm_open_cmd = 'open -a Firefox'
 
 autocmd StdinReadPre * let s:std_in=1
 "autocmd VimEnter * if argc() == 0 && !exists("s:std_in")| SrcExplToggle |endif

@@ -96,7 +96,9 @@ NeoBundle 'nicklasos/vim-jsx-riot'
 NeoBundle 'slim-template/vim-slim'
 
 "------- markup language -------
-NeoBundle 'tpope/vim-markdown'
+NeoBundle "rcmdnk/vim-markdown"
+NeoBundle 'kannokanno/previm'
+NeoBundle 'tyru/open-browser.vim'
 
 "------------- LaTex -----------
 NeoBundle 'lervag/vim-latex'
