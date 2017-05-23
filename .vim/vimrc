@@ -457,9 +457,61 @@ let g:user_emmet_expandabbr_key='<C-j>'
 " quickrun
 let g:quickrun_config=get(g:, 'quickrun_config', {})
 let g:quickrun_config.cpp={
-      \ 'command': 'g++',
-      \ 'cmdopt': '-std=c++14 -lstdc++'
-      \}
+	\ 'command': 'g++',
+	\ 'cmdopt': '-std=c++14 -lstdc++'
+	\}
+
+let g:quickrun_config['tex'] = {
+	\ 'command' : '~/.dotfiles/latexmk_wrapper',
+	\ 'outputter' : 'error',
+	\ 'outputter/error/success' : 'null',
+	\ 'outputter/error/error' : 'quickfix',
+	\ 'srcfile' : expand("%s"),
+	\ 'exec': '%c %s %a %o',
+	\}
+
+let g:quickrun_config.tmptex = {
+	\   'exec': [
+	\           'mv %s %a/tmptex.latex',
+	\           'latexmk -pdfdvi -pv -output-directory=%a %a/tmptex.latex',
+	\           ],
+	\   'args' : expand("%:p:h:gs?\\\\?/?"),
+	\   'outputter' : 'error',
+	\   'outputter/error/error' : 'quickfix',
+	\
+	\   'hook/eval/enable' : 1,
+	\   'hook/eval/cd' : "%s:r",
+	\
+	\   'hook/eval/template' : '\documentclass{jsarticle}'
+	\                         .'\usepackage[dvipdfmx]{graphicx, hyperref}'
+	\                         .'\usepackage{float}'
+	\                         .'\usepackage{amsmath,amssymb,amsthm,ascmac,mathrsfs}'
+	\                         .'\allowdisplaybreaks[1]'
+	\                         .'\theoremstyle{definition}'
+	\                         .'\newtheorem{theorem}{定理}'
+	\                         .'\newtheorem*{theorem*}{定理}'
+	\                         .'\newtheorem{definition}[theorem]{定義}'
+	\                         .'\newtheorem*{definition*}{定義}'
+	\                         .'\renewcommand\vector[1]{\mbox{\boldmath{\(#1\)}} }'
+	\                         .'\begin{document}'
+	\                         .'%s'
+	\                         .'\end{document}',
+	\
+	\   'hook/sweep/files' : [
+	\                        '%a/tmptex.aux',
+	\                        '%a/tmptex.dvi',
+	\                        '%a/tmptex.fdb_latexmk',
+	\                        '%a/tmptex.fls',
+	\                        '%a/tmptex.latex',
+	\                        '%a/tmptex.log',
+	\                        '%a/tmptex.out',
+	\                        ],
+	\}
+
+vnoremap <silent><buffer> <F5> :QuickRun -mode v -type tmptex<CR>
+
+" QuickRun and view compile result quickly (but don't preview pdf file)
+nnoremap <silent><F5> :QuickRun<CR>
 
 " vimshell
 "let g:vimshell_prompt_expr='getcwd().">"'
@@ -544,6 +596,17 @@ nmap  <D-/> :
 nnoremap <leader>a :Ack
 nnoremap <leader>v V`]
 
+" vimtex
+let g:vimtex_fold_envs = 0
+let g:vimtex_view_general_viewer = 'mupdf'
+
+augroup filetype
+  autocmd!
+  " tex file (I always use latex)
+  autocmd BufRead,BufNewFile *.tex set filetype=tex
+augroup END
+
+let g:tex_conceal=''
 
 "------------------
 " Useful Functions

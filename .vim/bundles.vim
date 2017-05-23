@@ -101,7 +101,7 @@ NeoBundle 'kannokanno/previm'
 NeoBundle 'tyru/open-browser.vim'
 
 "------------- LaTex -----------
-NeoBundle 'lervag/vim-latex'
+NeoBundle 'lervag/vimtex'
 
 "------------ toml -------------
 NeoBundle "cespare/vim-toml"
