@@ -29,5 +29,5 @@ snippet stl_op
         assert(lhs.size() == rhs.size());
         std::vector<T> result;
         result.reserve(lhs.size());
-        std::transform(lhs.begin(), lhs.end(), rhs.begin(), std::back_inserter(result), std::divids<T>());
+        std::transform(lhs.begin(), lhs.end(), rhs.begin(), std::back_inserter(result), std::divides<T>());
     }
