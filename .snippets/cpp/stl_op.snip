@@ -1,0 +1,33 @@
+snippet sorted_idx
+    template<typename T>
+    std::vector<T> operator+(const std::vector<T>& lhs, const std::vector<T>& rhs) {
+        assert(lhs.size() == rhs.size());
+        std::vector<T> result;
+        result.reserve(lhs.size());
+        std::transform(lhs.begin(), lhs.end(), rhs.begin(), std::back_inserter(result), std::plus<T>());
+        return result;
+    }
+
+    template<typename T>
+    std::vector<T> operator-(const std::vector<T>& lhs, const std::vector<T>& rhs) {
+        assert(lhs.size() == rhs.size());
+        std::vector<T> result;
+        result.reserve(lhs.size());
+        std::transform(lhs.begin(), lhs.end(), rhs.begin(), std::back_inserter(result), std::minus<T>());
+    }
+
+    template<typename T>
+    std::vector<T> operator*(const std::vector<T>& lhs, const std::vector<T>& rhs) {
+        assert(lhs.size() == rhs.size());
+        std::vector<T> result;
+        result.reserve(lhs.size());
+        std::transform(lhs.begin(), lhs.end(), rhs.begin(), std::back_inserter(result), std::multiplies<T>());
+    }
+
+    template<typename T>
+    std::vector<T> operator/(const std::vector<T>& lhs, const std::vector<T>& rhs) {
+        assert(lhs.size() == rhs.size());
+        std::vector<T> result;
+        result.reserve(lhs.size());
+        std::transform(lhs.begin(), lhs.end(), rhs.begin(), std::back_inserter(result), std::divids<T>());
+    }
