@@ -1,0 +1,65 @@
+snippet SCC
+    // 強連結成分分解
+    class SCC {
+        private:
+            int V;
+            int E;
+
+            vector<int> G[100001];
+            vector<int> rG[100001];
+            vector<int> vs;
+            bool used[100001];
+            int cmp[100001];
+
+            auto dfs(int v) -> void {
+                used[v] = true;
+                for (int i = 0; i < G[v].size(); ++i)
+                    if (!used[G[v][i]])
+                        dfs(G[v][i]);
+
+                vs.push_back(v);
+            }
+
+            auto rdfs(int v, int k) -> void{
+                used[v] = true;
+                cmp[v] = k;
+                for (int i = 0; i < rG[v].size(); i++)
+                    if (!used[rG[v][i]])
+                        rdfs(rG[v][i], k);
+            }
+
+        public:
+            SCC(int V, int E)
+                : V(V), E(E) { }
+
+            auto scc() -> int {
+                fill(used, used + V, false);
+                vs.clear();
+
+                for (int v = 0; v < V; v++) {
+                    if (!used[v]) dfs(v);
+                }
+
+                fill(used, used + V, false);
+                int k = 0;
+
+                for (int i = vs.size() - 1; i >= 0; i--)
+                    if (!used[vs[i]])
+                        rdfs(vs[i], k++);
+
+                return k;
+            }
+
+            auto add_edge(int s, int t) {
+                G[s].push_back(t);
+                rG[t].push_back(s);
+            }
+
+            auto get_cmp(int a) -> int {
+                return cmp[a];
+            }
+
+            auto is_union_cmp(int a, int b) -> bool {
+                return cmp[a] == cmp[b];
+            }
+    };
