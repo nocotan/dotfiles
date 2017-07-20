@@ -1,0 +1,41 @@
+" source ~/.dotfiles/.vim/vimrc
+source ~/.dotfiles/.vim/bundles.vim
+
+" enable filetype dectection and ft specific plugin/indent
+filetype plugin indent on
+
+" enable syntax hightlight and completion
+syntax on
+set synmaxcol=200
+set fenc=utf-8
+set nobackup
+set noswapfile
+set autoread
+set hidden
+set showcmd
+set number
+set cursorline
+set cursorcolumn
+set virtualedit=onemore
+set smartindent
+set visualbell
+set showmatch
+set laststatus=2
+set wildmode=list:longest
+nnoremap j gj
+nnoremap k gk
+
+set list listchars=tab:\▸\-
+set expandtab
+set tabstop=2
+set shiftwidth=2
+set ignorecase
+set smartcase
+set incsearch
+set hlsearch
+set wrapscan
+
+set background=dark
+:colorscheme lucius
+
+inoremap jj <Esc>

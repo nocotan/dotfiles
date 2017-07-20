@@ -15,6 +15,10 @@ set termencoding=utf-8
 set fileencoding=utf-8
 set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 
+"--------
+" Path
+"--------
+set path+=/usr/local/Cellar/boost/1.63.0/include
 
 "--------
 " General
@@ -458,7 +462,7 @@ let g:user_emmet_expandabbr_key='<C-j>'
 let g:quickrun_config=get(g:, 'quickrun_config', {})
 let g:quickrun_config.cpp={
 	\ 'command': 'g++',
-	\ 'cmdopt': '-std=c++14 -lstdc++'
+	\ 'cmdopt': '-std=c++17 -lstdc++'
 	\}
 
 let g:quickrun_config['tex'] = {
@@ -520,9 +524,9 @@ nnoremap <silent><F5> :QuickRun<CR>
 " syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
-let g:syntastic_cpp_checkers = ['gcc']
+let g:syntastic_cpp_checkers = ['g++']
 let g:syntastic_cpp_compiler='g++'
-let g:syntastic_cpp_compiler_options=' -std=c++14'
+let g:syntastic_cpp_compiler_options=' -std=c++17'
 let g:syntastic_python_checkers=['pyflakes', 'pep8']
 
 " NeoComplCache
@@ -559,7 +563,10 @@ let g:neocomplcache_max_list=300
 
 " cpp_enhanced_highlight
 let g:cpp_class_scope_highlight=1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
 let g:cpp_experimental_template_highlight=1
+let g:cpp_concepts_highlight = 1
 
 let c_no_curly_error=1
 let g:ycm_show_diagnostics_ui=0
