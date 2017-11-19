@@ -1,0 +1,38 @@
+snippet bellmanford
+    // ベルマンフォード法
+    struct bellmanford {
+        struct edge {
+            int to;
+            int cost;
+            edge(int to, int cost)
+              : to(to), cost(cost) { }
+        };
+
+        bool f;
+        vector<vector<edge>> G;
+        vector<int> d;
+
+        bellmanford(int V) {
+            f = false;
+            G.resize(V);
+        }
+
+        void add_edge(int s, int t, int d) {
+            G[s].push_back(edge(t, d));
+        }
+
+        void run(int s) {
+            d = vector<int>(G.size(), 1e+9);
+            d[s] = 0;
+            for(int i=0; i<G.size(); ++i) {
+                for(int v=0; v<G.size(); ++v) {
+                    for(auto &e : G[v]) {
+                        if(d[v] != 1e+9 && d[e.to] > d[v] + e.cost) {
+                            d[e.to] = d[v] + e.cost;
+                            if(i == G.size()-1) f = true;
+                        }
+                    }
+                }
+            }
+        }
+    };
