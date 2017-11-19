@@ -128,6 +128,9 @@ NeoBundle 'derekwyatt/vim-scala'
 "------- Go ----------
 NeoBundleLazy 'fatih/vim-go', { 'autoload': { 'filetypes': 'go' } }
 
+"------- Julia ----------
+NeoBundle 'JuliaEditorSupport/julia-vim'
+
 "------ Rust ---------
 NeoBundle 'rhysd/rust-doc.vim'
 NeoBundle 'rust-lang/rust.vim'
