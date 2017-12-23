@@ -1,3 +1,7 @@
+"" @file vimrc
+""
+""
+
 source ~/.dotfiles/.vim/bundles.vim
 
 " enable filetype dectection and ft specific plugin/indent
