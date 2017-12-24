@@ -1,6 +1,6 @@
-"" @file vimrc
-""
-""
+" @file vimrc
+" @author nocotan
+"
 
 source ~/.dotfiles/.vim/bundles.vim
 
