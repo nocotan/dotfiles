@@ -1,0 +1,33 @@
+snippet warshall_floyd
+    // ワーシャルフロイド法
+    struct warshall_floyd {
+        int d[1000][1000];
+        int V;
+        warshall_floyd(int V) : V(V) {
+            for(int i=0; i<V; ++i) {
+                for(int j=0; j<V; ++j) {
+                    if(i==j) d[i][j] = 0;
+                    else d[i][j] = 1e+9;
+                }
+            }
+        }
+        void add_edge(int s, int t, int c) {
+            d[s][t] = c;
+        }
+        void run() {
+            for(int k=0; k<V; ++k) {
+                for(int i=0; i<V; ++i) {
+                    for(int j=0; j<V; ++j) {
+                        if(d[i][k]==1e+9||d[k][j]==1e+9) continue;
+                        d[i][j] = min(d[i][j], d[i][k] + d[k][j]);
+                    }
+                }
+            }
+        }
+        bool has_negative_cycle() {
+            for(int i=0; i<V; ++i) {
+                if(d[i][i]<0) return true;
+            }
+            return false;
+        }
+    };

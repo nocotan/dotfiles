@@ -1,3 +1,7 @@
+" @file vimrc
+" @author nocotan
+"
+
 source ~/.dotfiles/.vim/bundles.vim
 
 " enable filetype dectection and ft specific plugin/indent
@@ -19,6 +23,7 @@ set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 " Path
 "--------
 set path+=/usr/local/Cellar/boost/1.63.0/include
+set path+=$HOME/local/cpplib/include
 
 "--------
 " General
@@ -110,7 +115,7 @@ set softtabstop=4
 " indent width
 set shiftwidth=2
 
-set textwidth=79
+" set textwidth=79
 
 set smarttab
 
@@ -524,7 +529,7 @@ nnoremap <silent><F5> :QuickRun<CR>
 " syntastic
 let g:syntastic_enable_signs=1
 let g:syntastic_auto_loc_list=2
-let g:syntastic_cpp_checkers = ['g++']
+let g:syntastic_cpp_checkers = ['gcc']
 let g:syntastic_cpp_compiler='g++'
 let g:syntastic_cpp_compiler_options=' -std=c++17'
 let g:syntastic_python_checkers=['pyflakes', 'pep8']
@@ -605,7 +610,8 @@ nnoremap <leader>v V`]
 
 " vimtex
 let g:vimtex_fold_envs = 0
-let g:vimtex_view_general_viewer = 'mupdf'
+let g:vimtex_compiler_latexmk = {'callback' : 0}
+" let g:vimtex_view_general_viewer = 'mupdf'
 
 augroup filetype
   autocmd!
