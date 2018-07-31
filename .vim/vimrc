@@ -113,7 +113,7 @@ set tabstop=4
 set softtabstop=4
 
 " indent width
-set shiftwidth=4
+set shiftwidth=2
 
 " set textwidth=79
 

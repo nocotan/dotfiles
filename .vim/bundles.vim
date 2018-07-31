@@ -159,6 +159,7 @@ NeoBundle 'kien/rainbow_parentheses.vim'
 " Color Schemes
 "--------------
 NeoBundle 'jonathanfilip/vim-lucius'
+NeoBundle 'cocopon/iceberg.vim'
 "NeoBundle 'justb3a/vim-smarties'
 "NeoBundle 'nocotan/ncer.vim'
 "NeoBundle 'jacoborus/tender.vim'
