@@ -114,6 +114,7 @@ NeoBundle "dart-lang/dart-vim-plugin"
 
 "------ Python -------
 NeoBundle 'hynek/vim-python-pep8-indent'
+NeoBundle "vim-python/python-syntax"
 
 "------- Ruby --------
 

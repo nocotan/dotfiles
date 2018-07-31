@@ -576,6 +576,9 @@ let g:cpp_concepts_highlight = 1
 let c_no_curly_error=1
 let g:ycm_show_diagnostics_ui=0
 
+" python-syntax
+let g:python_highlight_all = 1
+
 " vim-go
 let g:go_highlight_function = 1
 let g:go_highlight_methods = 1
