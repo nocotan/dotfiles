@@ -25,4 +25,3 @@
     * Depth-First Search
   * Go snippets
 - xmonad
-
