@@ -316,10 +316,9 @@ autocmd Syntax lisp,scheme,clojure,racket RainbowParenthesesToggle
 xmap ga <Plug>(EasyAlign)
 nmap ga <Plug>(EasyAlign)
 
-" PyFlake
-let g:PyFlakeOnWrite = 1
-let g:PyFlakeCheckers = 'pep8,mccabe,pyflakes'
-let g:PyFlakeDefaultComplexity=10
+function! Autopep8()
+    call Preserve(':silent %!autopep8 --ignore=E501 -')
+endfunction
 
 " tabbar
 let g:Tb_MaxSize = 2
@@ -532,7 +531,8 @@ let g:syntastic_auto_loc_list=2
 let g:syntastic_cpp_checkers = ['gcc']
 let g:syntastic_cpp_compiler='g++'
 let g:syntastic_cpp_compiler_options=' -std=c++17'
-let g:syntastic_python_checkers=['pyflakes', 'pep8']
+" let g:syntastic_python_checkers=['flake8', 'pep8']
+let g:syntastic_python_checkers=['flake8']
 
 " NeoComplCache
 let g:acp_enableAtStartup=0
@@ -552,6 +552,7 @@ autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType c setlocal omnifunc=ccomplete#Complete
+autocmd FileType python setlocal completeopt-=preview
 
 if !exists('g:neocomplcache_omni_patterns')
   let g:neocomplcache_omni_patterns = {}
