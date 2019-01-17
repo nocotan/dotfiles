@@ -1,0 +1,33 @@
+[[plugins]]
+repo = "Shougo/denite.nvim"
+
+[[plugins]]
+repo = "cocopon/iceberg.vim"
+hook_add = "colorscheme iceberg"
+
+[[plugins]]
+repo = "scrooloose/nerdtree"
+
+[[plugins]]
+repo = "Shougo/deoplete.nvim"
+
+[[plugins]]
+repo = "vim-airline/vim-airline"
+
+[[plugins]]
+repo = "airblade/vim-gitgutter"
+
+[[plugins]]
+repo = "zchee/deoplete-jedi"
+
+[[plugins]]
+repo = "w0rp/ale"
+
+[[plugins]]
+repo = 'zchee/deoplete-clang'
+on_ft = ["c", "cc", "cpp", "h", "hh", "hpp", "cmake"]
+depends = ['deoplete.nvim']
+hook_add = """
+let g:deoplete#sources#clang#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
+let g:deoplete#sources#clang#clang_header='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang'
+"""
