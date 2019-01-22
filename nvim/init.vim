@@ -65,6 +65,7 @@ set smartcase
 set wrapscan
 set incsearch
 set inccommand=split
+set nohlsearch
 
 " key maps
 inoremap <silent> jj <ESC>
@@ -75,6 +76,7 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+inoremap <expr>;; IsEndSemicolon() ? "<C-O>$;<CR>" : "<C-O>$<CR>"
 
 
 " set filetypes
@@ -85,6 +87,24 @@ autocmd FileType coffee,javascript setlocal tabstop=2 shiftwidth=2 softtabstop=2
 autocmd FileType python setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
 autocmd FileType html,htmldjango,xhtml,haml setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=0
 autocmd FileType sass,scss,css setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+
+let g:python_highlight_all = 1
+
+" templates
+" C++ template
+autocmd BufNewFile *.cpp 0r $HOME/.dotfiles/.template/template.cc
+
+" python template
+autocmd BufNewFile *.py 0r $HOME/.dotfiles/.template/template.py
+
+" HTML template
+autocmd BufNewFile *.html 0r $HOME/.dotfiles/.template/template.html
+
+" XMLSchema template
+autocmd BufNewFile *.xsd 0r $HOME/.dotfiles/.template/template.xsd
+
+" XML template
+autocmd BufNewFile *.xml 0r $HOME/.dotfiles/.template/template.xml
 
 " denite.vim
 nnoremap [denite] <Nop>
@@ -103,7 +123,15 @@ noremap [denite] :Denite file_rec -mode=insert
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
-let g:NERDTreeWinSize=30
+let g:NERDTreeDirArrows = 1
+let NERDChristmasTree=0
+let NERDTreeWinSize=30
+let NERDTreeChDirMode=2
+let NERDTreeIgnore=['\~$', '\.pyc$', '\.swp$']
+let NERDTreeSortOrder=['^__\.py$', '\/$', '*', '\.swp$',  '\~$']
+let NERDTreeShowBookmarks=1
+let NERDTreeShowHidden=1
+let NERDTreeWinPos = "left"
 
 function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
  exec 'autocmd filetype nerdtree highlight ' . a:extension .' ctermbg='. a:bg .' ctermfg='. a:fg .' guibg='. a:guibg .' guifg='. a:guifg
@@ -127,9 +155,6 @@ call NERDTreeHighlightFile('rb',     'Red',     'none', 'red',     '#151515')
 call NERDTreeHighlightFile('js',     'Red',     'none', '#ffa500', '#151515')
 call NERDTreeHighlightFile('php',    'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('sh',     'darkgreen',  'none', 'darkgreen',  '#151515')
-
-let g:NERDTreeDirArrows = 1
-let NERDTreeShowHidden=1
 
 " deoplete
 let g:deoplete#enable_at_startup = 1
@@ -160,3 +185,9 @@ nmap [ale] <Nop>
 map <C-k> [ale]
 nmap <silent> [ale]<C-P> <Plug>(ale_previous)
 nmap <silent> [ale]<C-N> <Plug>(ale_next)
+
+" impsort
+autocmd BufWritePre *.py ImpSort!
+
+" indent_guides
+let g:indent_guides_enable_on_vim_startup = 1

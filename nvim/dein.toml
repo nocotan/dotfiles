@@ -9,6 +9,9 @@ hook_add = "colorscheme iceberg"
 repo = "scrooloose/nerdtree"
 
 [[plugins]]
+repo = "tiagofumo/vim-nerdtree-syntax-highlight"
+
+[[plugins]]
 repo = "Shougo/deoplete.nvim"
 
 [[plugins]]
@@ -31,3 +34,21 @@ hook_add = """
 let g:deoplete#sources#clang#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
 let g:deoplete#sources#clang#clang_header='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang'
 """
+
+[[plugins]]
+repo = "tweekmonster/impsort.vim"
+
+[[plugins]]
+repo = "nathanaelkane/vim-indent-guides"
+
+[[plugins]]
+repo = "cohama/lexima.vim"
+
+[[plugins]]
+repo = "bronson/vim-trailing-whitespace"
+
+[[plugins]]
+repo = "tpope/vim-commentary"
+
+[[plugins]]
+repo = "vim-python/python-syntax"
