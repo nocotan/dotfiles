@@ -24,16 +24,19 @@ repo = "airblade/vim-gitgutter"
 repo = "zchee/deoplete-jedi"
 
 [[plugins]]
+repo = "davidhalter/jedi-vim"
+
+[[plugins]]
 repo = "w0rp/ale"
 
 [[plugins]]
 repo = 'zchee/deoplete-clang'
 on_ft = ["c", "cc", "cpp", "h", "hh", "hpp", "cmake"]
 depends = ['deoplete.nvim']
-hook_add = """
-let g:deoplete#sources#clang#libclang_path='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/libclang.dylib'
-let g:deoplete#sources#clang#clang_header='/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang'
-"""
+hook_source = '''
+let g:deoplete#sources#clang#libclang_path = '/usr/lib/llvm-6.0/lib/libclang-6.0.so.1'
+let g:deoplete#sources#clang#clang_header = '/usr/include/clang'
+'''
 
 [[plugins]]
 repo = "tweekmonster/impsort.vim"
@@ -52,3 +55,12 @@ repo = "tpope/vim-commentary"
 
 [[plugins]]
 repo = "vim-python/python-syntax"
+
+[[plugins]]
+repo = "nvie/vim-flake8"
+
+[[plugins]]
+repo = "octol/vim-cpp-enhanced-highlight"
+
+[[plugins]]
+repo = "vim-jp/cpp-vim"

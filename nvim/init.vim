@@ -5,6 +5,7 @@ source $HOME/.dotfiles/nvim/plugins.vim
 filetype plugin indent on
 
 " enable syntax highlight and completion
+setlocal conceallevel=0
 syntax on
 set synmaxcol=200
 
@@ -17,6 +18,12 @@ set fileencodings=ucs-bom,utf-8,big5,gb2312,latin1
 " color scheme
 set background=dark
 set t_Co=256
+
+highlight Normal ctermbg=none
+highlight NonText ctermbg=none
+highlight LineNr ctermbg=none
+highlight Folded ctermbg=none
+highlight EndOfBuffer ctermbg=none
 
 " general
 set number
@@ -76,10 +83,27 @@ nnoremap <C-h> <C-w>h
 nnoremap <C-j> <C-w>j
 nnoremap <C-k> <C-w>k
 nnoremap <C-l> <C-w>l
+
+function! IsEndSemicolon()
+    let c = getline(".")[col("$")-2]
+    if c != ';'
+        return 1
+    else
+        return 0
+    endif
+endfunction
+
 inoremap <expr>;; IsEndSemicolon() ? "<C-O>$;<CR>" : "<C-O>$<CR>"
+
+augroup vimrcEx
+  au BufRead * if line("'\"") > 0 && line("'\"") <= line("$") |
+  \ exe "normal g`\"" | endif
+augroup END
 
 
 " set filetypes
+autocmd FileType c setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
+autocmd FileType cpp setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType php setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType ruby setlocal tabstop=2 shiftwidth=2 softtabstop=2 textwidth=120
 autocmd FileType php setlocal tabstop=4 shiftwidth=4 softtabstop=4 textwidth=120
@@ -105,6 +129,7 @@ autocmd BufNewFile *.xsd 0r $HOME/.dotfiles/.template/template.xsd
 
 " XML template
 autocmd BufNewFile *.xml 0r $HOME/.dotfiles/.template/template.xml
+
 
 " denite.vim
 nnoremap [denite] <Nop>
@@ -181,6 +206,9 @@ let g:ale_linters = {
 \   'python': ['flake8'],
 \}
 
+let g:ale_cpp_clang_options = "-std=c++17 -Wall -I$HOME/lib/libtorch/include/torch/csrc/api/include/ -I$HOME/lib/libtorch/include/"
+let g:ale_cpp_gcc_options = "-std=c++17 -Wall -I$HOME/lib/libtorch/include/torch/csrc/api/include/ -I$HOME/lib/libtorch/include/"
+
 nmap [ale] <Nop>
 map <C-k> [ale]
 nmap <silent> [ale]<C-P> <Plug>(ale_previous)
@@ -191,3 +219,23 @@ autocmd BufWritePre *.py ImpSort!
 
 " indent_guides
 let g:indent_guides_enable_on_vim_startup = 1
+
+" vim-cpp-enhanced-highlight
+let g:cpp_class_scope_highlight=1
+let g:cpp_member_variable_highlight = 1
+let g:cpp_class_decl_highlight = 1
+let g:cpp_experimental_template_highlight=1
+let g:cpp_concepts_highlight = 1
+
+let c_no_curly_error=1
+let g:ycm_show_diagnostics_ui=0
+
+" vim-flake8
+autocmd BufWritePost *.py call Flake8()
+
+" jedi-vim
+" set completeopt=menuone
+let g:jedi#auto_initialization = 1
+let g:jedi#auto_vim_configuration = 1
+let g:jedi#show_call_signatures = 0
+autocmd FileType python setlocal completeopt-=preview

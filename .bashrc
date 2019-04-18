@@ -161,12 +161,9 @@ export ANDROID_HOME="$HOME/tools/android-sdk-linux"
 export RUST_SRC_PATH="$HOME/forks/rust/src"
 export PATH="$HOME/.local/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$PATH"
 export PATH="$HOME/.npm-packages/bin:$PATH"
-export PATH="$PATH:$HOME/chppl-tool/chppl-tool/bin"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 export FZF_COMPLETION_TRIGGER='~~'
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 
 if [[ -s ~/.nvm/nvm.sh ]];
   then source ~/.nvm/nvm.sh
